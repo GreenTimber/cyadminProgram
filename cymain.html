@@ -1,0 +1,561 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>创游云ERP</title>
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+
+    <script src="assets/js/skins.min.js"></script>
+    <!--cy样式-->
+    <link href="css/cymain.css" rel="stylesheet" type="text/css" />
+
+</head>
+<!-- 解决手机端hover问题ontouchstart-->
+<body ontouchstart="">
+<!--//预加载-->
+<div id="cyreload">
+    <div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div> <div class="imglogodiv"><img class="imglogo" src="images/logo.png"/></div>
+</div>
+<div class="guide-content" id="guidcon" style="display: none;">
+    <a href="javascript:closeDiv();" class="btn btn-circle closeguidbtn" ><i class="fa fa-close"></i></a>
+
+        <div class="iframe-content col-sm-12 col-xs-12 col-md-12 col-lg-12" id="iframecon">
+            <iframe src="yindao.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+</div>
+
+
+
+<script>
+    var tabcontent0 = {};
+    tabcontent0["tabmenuid"]="";
+    tabcontent0["tabname"]= "首页";
+    tabcontent0["taburl"]= "pages/index.html";
+    var tabcontent = {};
+    tabcontent["tabmenuid"]="1";
+    tabcontent["tabname"]= "采购订单";
+    tabcontent["taburl"]= "search.html";
+
+    var tabcontent1 = {};
+    tabcontent1["tabmenuid"]="2";
+    tabcontent1["tabname"]= "物料管理";
+    tabcontent1["taburl"]= "search.html";
+    var tabcontent3 = {};
+    tabcontent3["tabmenuid"]="3";
+    tabcontent3["tabname"]= "行动记录";
+    tabcontent3["taburl"]= "statistics.html";
+    var tabcontent4 = {};
+    tabcontent4["tabmenuid"]="4";
+    tabcontent4["tabname"]= "销售机会";
+    tabcontent4["taburl"]= "charts.html";
+    var tabcontent5 = {};
+    tabcontent5["tabmenuid"]="5";
+    tabcontent5["tabname"]= "销售机会";
+    tabcontent5["taburl"]= "search.html";
+    var tabcontent6 = {};
+    tabcontent6["tabmenuid"]="6";
+    tabcontent6["tabname"]= "销售机会";
+    tabcontent6["taburl"]= "search.html";
+    var tabcontent7 = {};
+    tabcontent7["tabmenuid"]="7";
+    tabcontent7["tabname"]= "销售机会";
+    tabcontent7["taburl"]= "search.html";
+    var tabcontent8 = {};
+    tabcontent8["tabmenuid"]="8";
+    tabcontent8["tabname"]= "销售机会";
+    tabcontent8["taburl"]= "search.html";
+    var tabcontent9 = {};
+    tabcontent9["tabmenuid"]="9";
+    tabcontent9["tabname"]= "销售机会";
+    tabcontent9["taburl"]= "jitai.html";
+    var tabcontent10 = {};
+    tabcontent10["tabmenuid"]="10";
+    tabcontent10["tabname"]= "装刀流程";
+    tabcontent10["taburl"]= "djzdliuchen.html";
+    var tabcontent11 = {};
+    tabcontent11["tabmenuid"]="11";
+    tabcontent11["tabname"]= "卸刀流程";
+    tabcontent11["taburl"]= "djxdliuchen.html";
+    var tabcontent12 = {};
+    tabcontent12["tabmenuid"]="12";
+    tabcontent12["tabname"]= "报废流程";
+    tabcontent12["taburl"]= "djbfliuchen.html";
+    var tabcontent13 = {};
+    tabcontent13["tabmenuid"]="13";
+    tabcontent13["tabname"]= "再次使用流程";
+    tabcontent13["taburl"]= "djzcliuchen.html";
+    var tabcontent14 = {};
+    tabcontent14["tabmenuid"]="14";
+    tabcontent14["tabname"]= "刃磨流程";
+    tabcontent14["taburl"]= "djrmliuchen.html";
+    var tabcontent15 = {};
+    tabcontent15["tabmenuid"]="15";
+    tabcontent15["tabname"]= "订单生成流程";
+    tabcontent15["taburl"]= "djddscliuchen.html";
+    var tabcontent16 = {};
+    tabcontent16["tabmenuid"]="16";
+    tabcontent16["tabname"]= "盘点流程";
+    tabcontent16["taburl"]= "djpdliuchen.html";
+    var tabcontent17 = {};
+    tabcontent17["tabmenuid"]="17";
+    tabcontent17["tabname"]= "盘点流程";
+    tabcontent17["taburl"]= "treelist.html";
+
+
+
+
+</script>
+<!--手机端遮罩-->
+<div id="shade" ></div>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="assets/img/logo1.png" alt="" />
+                        </small>
+                    </a>
+                </div>
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+
+                        <ul class="account-area">
+
+                            <li id="opguid">
+                                <a class="dropdown-toggle" data-toggle="dropdown" title="Task" href="#" >
+                                    <i class="fa fa-send-o"></i>
+                                    <!--<span class="badge">3</span>-->
+                                </a>
+
+                            </li>
+
+
+
+                            <li >
+                                <a class="dropdown-toggle" data-toggle="dropdown" title="Mails" href="#" >
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="unread bellunread" style="color: white">1</span>
+                                    <!--<span class="badge">3</span>-->
+                                </a>
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    重要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    2分钟前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    规划一个计划表
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    12小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    安排人事招收2个文员
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    13小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    缴纳公积金
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    13小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    缴纳公积金
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    13小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    缴纳公积金
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    13小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    缴纳公积金
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    次要通知
+                                                </span>
+                                                <span class="message-time">
+                                                    13小时前
+                                                </span>
+
+                                                <span class="message-body">
+                                                    缴纳公积金
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/toux.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>adminds</span></span></h2>
+                                    </section>
+                                </a>
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="edit">
+                                        <i class="fa fa-reorder"></i>     <a href="#">个人资料</a>
+                                    </li>
+                                    <li class="edit">
+                                        <i class="fa fa-key"></i> <a href="#">修改密码</a>
+                                    </li>
+                                    <li class="edit">
+                                        <i class="fa fa-sign-out"></i> <a href="login.html">
+                                            退出
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--手机端菜单pc隐藏-->
+    <div class="cymobile-block-menu">
+        <i class="fa fa-angle-right" ></i>
+    </div>
+    <!--<div class="main-container container-fluid">-->
+        <div class="page-container ">
+            <div class="page-sidebar" id="sidebar" >
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput">
+                    <i class="searchicon fa fa-search"></i>
+                </div>
+                <ul class="nav sidebar-menu">
+                    <li class="" >
+                        <a href="javascript:addtab(tabcontent0['tabmenuid'],tabcontent0['tabname'],tabcontent0['taburl']);" >
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 首页 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-shopping-cart"></i>
+                            <span class="menu-text "> 采购管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu ">
+                            <li>
+                                <a href="javascript:addtab(tabcontent['tabmenuid'],tabcontent['tabname'],tabcontent['taburl']);">
+                                    <span class="menu-text">采购订单<span class="unread" style="color: white">2</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent1['tabmenuid'],tabcontent1['tabname'],tabcontent1['taburl']);">
+                                    <span class="menu-text">物料管理</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="javascript:addtab(tabcontent3['tabmenuid'],tabcontent3['tabname'],tabcontent3['taburl']);">
+                                    <span class="menu-text">供应商管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent4['tabmenuid'],tabcontent4['tabname'],tabcontent4['taburl']);">
+                                    <span class="menu-text">统计报表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-calculator"></i>
+                            <span class="menu-text"> 销售管理(1) </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu ">
+                            <li >
+                                <a href="javascript:addtab(tabcontent5['tabmenuid'],tabcontent5['tabname'],tabcontent5['taburl']);">
+                                    <span class="menu-text">销售订单</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent6['tabmenuid'],tabcontent6['tabname'],tabcontent6['taburl']);">
+                                    <span class="menu-text">销售审批<span class="unread" style="color: white">1</span></span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:addtab(tabcontent7['tabmenuid'],tabcontent7['tabname'],tabcontent7['taburl']);">
+                                    <span class="menu-text">销售统计报表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon fa fa-tasks"></i>
+                        <span class="menu-text"> 仓库管理 </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                    <ul class="submenu ">
+                        <li>
+                            <a href="javascript:addtab(tabcontent8['tabmenuid'],tabcontent8['tabname'],tabcontent8['taburl']);">
+                                <span class="menu-text">库存信息</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:addtab(tabcontent9['tabmenuid'],tabcontent9['tabname'],tabcontent9['taburl']);">
+                                <span class="menu-text">库存统计</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-dollar"></i>
+                            <span class="menu-text"> 财务管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu ">
+                            <li>
+                                <a href="javascript:addtab(tabcontent1['tabmenuid'],tabcontent1['tabname'],tabcontent1['taburl']);">
+                                    <span class="menu-text">财务概况</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:addtab(tabcontent1['tabmenuid'],tabcontent1['tabname'],tabcontent1['taburl']);">
+                                    <span class="menu-text">账单管理<span class="unread" style="color: white">3</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="menu-dropdown">
+                                    <span class="menu-text">统计报表</span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="">
+                                        <a href="javascript:addtab(tabcontent1['tabmenuid'],tabcontent1['tabname'],tabcontent1['taburl']);">
+
+                                            <span class="menu-text">销售明细</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="javascript:addtab(tabcontent10['tabmenuid'],tabcontent10['tabname'],tabcontent10['taburl']);">
+                                            <span class="menu-text">采购明细</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="javascript:addtab(tabcontent17['tabmenuid'],tabcontent17['tabname'],tabcontent17['taburl']);">
+                                            <span class="menu-text">树形结构</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-dollar"></i>
+                            <span class="menu-text"> 流程管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu ">
+                    <li>
+                        <a href="javascript:addtab(tabcontent10['tabmenuid'],tabcontent10['tabname'],tabcontent10['taburl']);">
+                            <span class="menu-text">装刀流程</span>
+                        </a>
+                    </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent11['tabmenuid'],tabcontent11['tabname'],tabcontent11['taburl']);">
+                                    <span class="menu-text">卸刀流程</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent12['tabmenuid'],tabcontent12['tabname'],tabcontent12['taburl']);">
+                                    <span class="menu-text">报废流程</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent13['tabmenuid'],tabcontent13['tabname'],tabcontent13['taburl']);">
+                                    <span class="menu-text">再次使用流程</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent14['tabmenuid'],tabcontent14['tabname'],tabcontent14['taburl']);">
+                                    <span class="menu-text">刃磨流程</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent15['tabmenuid'],tabcontent15['tabname'],tabcontent15['taburl']);">
+                                    <span class="menu-text">订单生成流程</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:addtab(tabcontent16['tabmenuid'],tabcontent16['tabname'],tabcontent16['taburl']);">
+                                    <span class="menu-text">盘点流程</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content">
+              <div class="page-header position-relative" >
+
+                  <!--顶部菜单-->
+                    <div class="headertitle" id="headertitle">
+                        <a href="javascript:addtab(tabcontent3['tabmenuid'],tabcontent3['tabname'],tabcontent3['taburl']);" class="btn btn-sky"><i class="fa fa-database"></i>运维管理</a>
+                        <a href="javascript:addtab(tabcontent3['tabmenuid'],tabcontent3['tabname'],tabcontent3['taburl']);" class="btn btn-sky"><i class="fa fa-user-plus"></i>权限分配</a>
+                        <a href="javascript:Notify('内部错误', 'center-center', '5000', 'warning', 'fa-warning', true);" class="btn btn-sky"><i class="fa fa-file-text"></i>业务草稿</a>
+                        <a href="javascript:Notify('修改成功', 'center-center', '5000', 'success','fa-check', true);" class="btn btn-sky"><i class="fa fa-users"></i>用户管理</a>
+                        <a  class="btn btn-sky oplaod"><i class="fa fa-sliders"></i>基础资料</a>
+                    </div>
+
+                </div>
+                        <div class="tabbable col-lg-12 col-md-12 col-sm-12" id="tabbable">
+                            <span class="tabbarleft"><i class="fa fa-angle-left"></i></span>
+                            <ul class="nav nav-tabs" id="myTab" >
+                                <li class="cytab active" >
+                                    <a data-toggle="tab" href="#home">首页
+                                        <div class="widget-buttons">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <span class="tabbarright"><i class="fa fa-angle-right"></i></span>
+
+                            <div class="tab-content col-lg-12 col-md-12 col-sm-12" id="myPane">
+                                <div id="home" class="tab-pane cytabpane active ">
+                                    <iframe src="index.html" id="iframeid"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+    <!--</div>-->
+
+
+
+<script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+   <!--Beyond Scripts-->
+   <script src="assets/js/beyond.min.js"></script>
+<script src="assets/js/toastr/toastr.js"></script>
+    <!--cyjs-->
+   <script src="js/cymain.js"></script>
+
+<script>
+    $(document).ready(function(){
+//        setTimeout('showguid()',3000);
+    });
+    function closeDiv(){
+        $("#iframecon").addClass("animated zoomOut");
+        setTimeout('$(\'#guidcon\').css("display","none");',500);
+    }
+    $("#opguid").on("click",function () {
+        showguid();
+    })
+    function showguid() {
+        $("#guidcon").css("display","block");
+        $("#iframecon").removeClass("animated zoomOut");
+        $("#iframecon").addClass("animated zoomIn");
+    }
+</script>
+</body>
+</html>

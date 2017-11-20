@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+
+    <link  href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="css/bootstrapStyle/bootstrapStyle.css" rel="stylesheet" />
+    <link href="css/tables.min.css" rel="stylesheet" />
+    <link href="css/fileinput.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/insert.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/cyModal.css" />
+    <title>创游云ERP</title>
+</head>
+<body>
+<!--//预加载-->
+<div id="cyreload">
+    <div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div> <div class="imglogodiv"><img class="imglogo" src="images/logo.png"/></div>
+</div>
+
+<div class="widget">
+    <div class="widget-header bordered-bottom bordered-blue">
+        <span class="widget-caption">采购订单</span>
+
+        <div class="form-group-l   detailbtns" >
+            <a class="goback btn btn-sky btn-sm okbtn" onclick="javascript:history.go(-1);" title="返回上级页面"> <i
+                    class="glyphicon glyphicon-refresh"></i>返回
+            </a>
+        </div>
+        <div class="form-group-l    detailbtns" >
+            <button type="button"   class="btn btn-sky btn-sm okbtn" title="保存此页面" onclick="savedata();">
+                <i class="fa fa-save"></i> 保存
+            </button>
+        </div>
+        <div class="form-group-l   detailbtns" >
+            <a class="refresh btn btn-sky btn-sm okbtn" id="refresh-toggler" href="" title="刷新此页面"> <i
+                    class="glyphicon glyphicon-refresh"></i>刷新
+            </a>
+        </div>
+    </div>
+
+    <div class="widget-body no-padding">
+        <div class="widget-main ">
+            <div class="panel-group accordion" id="accordion">
+                    <div class="panel-heading ">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+                                信息编辑
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="height: auto;">
+                        <div class="panel-body border-red">
+                                <div class="form-inline">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6" >
+                                            <label class="col-xs-4"><span>客户姓名：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" class="form-control "  placeholder="请输入条件"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class=" col-xs-4"><span>客户地址：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" class="form-control"  placeholder="请输入条件"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+
+                                            <label class="col-xs-4">  <span>选择供应商：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <div class="popbtn">
+                                                    <input type="text" class="form-control sltval"   readonly="readonly"/>
+                                                    <button class="btn btn-default sltbtn col-xs-2" type="button" >选择</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span >选择日期：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" readonly="readonly"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4">  <span>选择时间范围：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" name="reservation" id="reservationtime" class="form-control" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM"  class="span4" readonly="readonly"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4">   <span>
+                                                    选择时间：
+                                    </span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input class="form-control" id="timepicker1" type="text" readonly="readonly"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span>选择类型：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <select class="selectsearch">
+                                                    <option value="1">采购</option>
+                                                    <option value="2">销售</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-select2 col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span>选择类型：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <select class="selectsearch col-xs-12" id="select2se" style="width: 80%;">
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">
+                                子表信息
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="false" style="height: auto;">
+                        <div class="panel-body border-palegreen">
+                            <div class="searchtreenode col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group  col-md-4 col-sm-4" >
+                                    <label class="col-xs-4"><span>搜索节点名称：</span></label>
+                                    <div class="col-xs-8 forminput">
+                                        <input type="text" class="form-control "  placeholder="请输入条件" id="searchnodeinput"/>
+                                    </div>
+                                </div>
+                                <div class="form-group  searchbtn col-md-1 col-sm-1">
+                                    <div class="col-xs-12 forminput">
+                                        <a href="javascript:searchtreenode();" class="btn btn-default">搜索</a>
+                                    </div>
+                                </div>
+                            <ul id="treeDemo" class="ztree col-md-7 col-sm-7"></ul>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--选择弹框-->
+    <div class="modal fade " id="sltpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >编辑</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="table-scrollable">
+                    <table id="selecttable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th class="th0">订单编号</th>
+                            <th class="th1">订单名称</th>
+                            <th class="th2">订单类型</th>
+                            <th class="th3">订单阶段</th>
+                            <th class="th4">订单来源</th>
+                            <th class="th5">订单状态</th>
+                            <th class="th9">创建时间</th>
+                            <th class="th9">创建时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr >
+                            <td></td>
+
+                            <td>Trident1</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>Trident2</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>Trident3</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="row">
+                        <div class="form-group-l  col-lg-3 col-md-3 col-sm-3 detailbtns">
+                            <button type="button" id="seldtable"  class="btn btn-default okbtn">
+                                <i class="fa fa-check"></i> 确定
+                            </button>
+                        </div> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+<script src="assets/js/select2/select2.js"></script>
+<script src="assets/js/tagsinput/bootstrap-tagsinput.js"></script>
+<script src="js/tables.min.js"></script>
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+<script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+<script src="js/fileinput/fileinput.js"></script>
+<script src="js/fileinput/zh.js"></script>
+<script src="assets/js/toastr/toastr.js"></script>
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+<!--treelist.js为对应此页面的js-->
+<script src="js/treelist.js"></script>
+<script src="js/muling.bootbox.js"></script>
+<script src="js/jquery.ztree.all.min.js"></script>
+
+
+
+<script>
+    $('.date-picker').datepicker();
+    $('#timepicker1').timepicker();
+//    Selecttable().init();
+
+        $('#reservationtime').daterangepicker();
+    var data = [{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" }];
+    $("#select2se").select2({
+        data: data,
+        placeholder:'请选择',
+        allowClear:true
+    })
+
+</script>
+</body>
+</html>

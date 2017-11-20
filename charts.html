@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="plus/css/daterangepicker-bs3.css" rel="stylesheet" />
+
+    <link href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <link href="css/fileinput.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/charts.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/fakeloader.css" />
+
+    <title>创游云ERP</title>
+
+</head>
+<body>
+<div class="fakeloader"></div>
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/fakeloader.js"></script>
+<script>
+    (function ($) {
+        $(".fakeloader").fakeLoader({
+            timeToHide:1000,//消失时间
+            bgColor:"#eee",//背景颜色
+            spinner:"spinner3",//控件号
+            zIndex: '9999999',//至于顶层
+            opacity:'1'//透明度
+        });
+    })(jQuery);
+</script>
+<div class="widget">
+    <div class="widget-header bordered-bottom bordered-blue" id="fiexdtitle">
+        <span class="widget-caption">采购订单</span>
+
+        <div class="widget-buttons">
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="widget-body no-padding" >
+        <div class="widget-main " >
+            <div class="panel-group accordion" id="accordion" >
+
+
+                    <div class="panel-heading ">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle  " data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+                                筛选条件
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="height: auto;">
+                        <div class="panel-body border-red">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label class="redstar">*<span>客户姓名：</span></label>
+                                    <input type="email" class="form-control"  placeholder="请输入条件"/>
+                                </div>
+                                <div class="form-group">
+                                    <label><span>客户地址：</span></label>
+                                    <input type="email" class="form-control"  placeholder="请输入条件"/>
+                                </div>
+                                <div class="input-group ">
+                                            <span class="input-group-addon">
+                                                    选择供应商
+                                            </span>
+                                    <input type="text" class="form-control sltval"  readonly="readonly"/>
+                                    <span class="input-group-btn">
+                                                <button class="btn btn-default sltbtn" type="button" >选择</button>
+                                            </span>
+                                </div>
+                                <div class="input-group">
+                                            <span class="input-group-addon">
+                                                    选择日期
+                                            </span>
+                                    <input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" readonly="readonly"/>
+                                    <span class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                </div>
+                                <div class="input-group">
+                                            <span class="input-group-addon">
+                                                    选择时间范围
+                                            </span>
+                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                    <input type="text" name="reservation" id="reservationtime" class="form-control" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM"  class="span4" readonly="readonly"/>
+                                </div>
+                                <div class="form-group">
+                                    <label><span>选择类型：</span></label>
+                                    <select class="selectsearch ">
+                                        <option value="1">采购</option>
+                                        <option value="2">销售</option>
+                                    </select>
+                                </div>
+                                <div class="input-group  searchbtn">
+                                    <a href="javascript:void(0);" class="btn btn-default">搜索</a>
+                                </div>
+                            </div>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+
+
+                <!--统计图-->
+                <div class="panel-heading ">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle  " data-toggle="collapse" data-parent="#accordion" href="#statistics" aria-expanded="true">
+                            统计报表
+                        </a>
+                    </h4>
+                </div>
+                <div id="statistics" class="panel-collapse collapse in" aria-expanded="true" style="height: auto;">
+                    <div class="panel-body border-red">
+
+                        <div class="tabbable" >
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="active">
+                                    <a data-toggle="tab" href="#c1" aria-expanded="true">
+                                        物料数据月份统计图
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a data-toggle="tab" href="#c2" aria-expanded="false">
+                                        物料数据年份统计图
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="c1" class="tab-pane active">
+                                    <div id="echarts1"  ></div>
+                                </div>
+
+                                <div id="c2" class="tab-pane">
+                                    <div id="echartszz" ></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <!--选择弹框-->
+    <div class="modal fade " id="sltpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >编辑</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="table-scrollable">
+
+                                        <table id="selecttable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                </th>
+                                                <th class="th0">订单编号</th>
+                                                <th class="th1">订单名称</th>
+                                                <th class="th2">订单类型</th>
+                                                <th class="th3">订单阶段</th>
+                                                <th class="th4">订单来源</th>
+                                                <th class="th5">订单状态</th>
+                                                <th class="th9">创建时间</th>
+                                                <th class="th9">创建时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr >
+                                                <td></td>
+
+                                                <td>Trident1</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+
+                                                <td>Trident2</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+
+                                                <td>Trident3</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+                                                <td>Trident</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                    </div>
+                                <div class="row">
+                                    <div class="form-group-l  col-lg-3 col-md-3 col-sm-3 detailbtns">
+                                        <button type="button" id="seldtable"  class="btn btn-default okbtn" >
+                                            <i class="fa fa-check"></i>确定
+                                        </button>
+                                    </div> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+<script src="assets/js/select2/select2.js"></script>
+<script src="assets/js/tagsinput/bootstrap-tagsinput.js"></script>
+
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+<script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+<script src="js/fileinput/fileinput.js"></script>
+<script src="js/fileinput/zh.js"></script>
+<script src="assets/js/toastr/toastr.js"></script>
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+<script src="js/echarts.min.js"></script>
+
+<script src="js/charts.js"></script>
+<script src="assets/js/bootbox/bootbox.js"></script>
+
+
+<script>
+
+
+    $('.date-picker').datepicker();
+    $('#timepicker1').timepicker();
+    $('#reservationtime').daterangepicker();
+    $('#echarts1').cypieEcharts("title","legend","seriesData");
+    $('#echartszz').cyloafEcharts("dsa","dsa","dsa","dsa","dsa");
+</script>
+</body>
+</html>

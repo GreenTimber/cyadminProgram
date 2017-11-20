@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link  href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="css/tables.min.css" rel="stylesheet" />
+    <script src="assets/js/jquery.min.js"></script>
+    <style>
+        .input1,.input2,.input3,.selectsql,.input4,.input5,.input6,.input7,.input8,.input9{
+            width: 180px;
+            float: left;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+        .fg{
+            margin: 0 auto;
+            width: 100%;
+            height: 180px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+        .input[type="file"], input[type="checkbox"], input[type="radio"], select{
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="form-group fg">
+<input class="form-control input1" id="input1" data-id="input1"  placeholder="输入框1"/>
+    <!--Infinity -Infinity 代表正负无穷-->
+<input class="form-control input2" id="input2" data-id="input2"  placeholder="输入框2"/>
+
+<input class="form-control input3" id="input3"  placeholder="输入框3"/>
+
+    <select class="form-control selectsql" id="selectsql" >
+    </select>
+
+    <input class="form-control input4" id="input4" placeholder="输入框4"/>
+
+    <input class="form-control input5" id="input5" placeholder="通过sql查出上下限值" />
+
+    <input class="form-control input6" id="input6" data-id="input6"  placeholder="输入框6" />
+
+    <input class="form-control input7" id="input7"  data-id="input7" placeholder="输入框7"/>
+    <input class="form-control input8" id="input8"  placeholder="输入框8"/>
+    <input class="form-control input9" id="input9"  data-id="input9" placeholder="输入框9"/>
+
+</div>
+<div class="table-scrollable">
+    <button class="addbtn btn-sm"><i class="fa fa-plus"></i>新增</button>
+    <button class="debtn btn-sm"><i class="fa fa-plus"></i>删除</button>
+    <table id="zibiaotable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+
+        <!--<tbody>-->
+        <!--<tr>1</tr>-->
+        <!--<tr>2</tr>-->
+        <!--<tr>3</tr>-->
+        <!--<tr>4</tr>-->
+        <!--<tr>5</tr>-->
+        <!--<tr>6</tr>-->
+        <!--</tbody>-->
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+</body>
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="js/tables.min.js"></script>
+<script src="js/jquery.cy.checkComponents.js"></script>
+
+
+<script>
+
+        $('#selectsql').checkComponents({
+            paramType:'select',//控件类型
+            data:'上海,苏州,南京,深圳,重庆,北京,广东'//数据
+        });
+        $('#input2').checkNumber({
+            toplimit:'1000',//上限值
+            lowerlimit:'-100',//下限值
+            defaultvalue:'0',//默认值
+            digit:'3'//要保留的小数位数
+        });
+        $('#input1').checkNumber({
+            toplimit:'100000',//上限值
+            lowerlimit:'-100',//下限值
+            defaultvalue:'0',//默认值
+            digit:'2'//要保留的小数位数
+        });
+        $('#input3').checkComponents({
+            paramType:'string',//控件类型
+            inputId1:'input1',//控件1
+            inputId2:'input2',//控件2
+            readonly: true,//结果框是否只读
+            formula:'*',//公式
+            digit: 4//要保留小数位数
+        });
+        $('#input4').checkComponents({
+            paramType:'input',//控件类型
+            data:'10'//传入数据
+        });
+        $('#input5').checkNumber({
+            toplimit:'',//上限值通过传入sql语句查出
+            lowerlimit:'',//下限值通过传入sql语句查出
+            defaultvalue:'0',//默认值
+            digit:'5'//要保留的小数位数
+        });
+
+        $('#input4').checkNumber({
+            toplimit:'1000',//上限值
+            lowerlimit:'-100',//下限值
+            defaultvalue:'0',//默认值
+            digit:'5'//要保留的小数位数
+        });
+
+        $('#input7').checkNumber({
+            toplimit:'1000',//上限值
+            lowerlimit:'-100',//下限值
+            defaultvalue:'0',//默认值
+            digit:'3'//要保留的小数位数
+        });
+        $('#input3').checkNumber({
+            toplimit:'1000',//上限值
+            lowerlimit:'-100',//下限值
+            defaultvalue:'0',//默认值
+            digit:'4'//要保留的小数位数
+        });
+        $('#input6').checkNumber({
+            toplimit:'10000',//上限值正无穷
+            lowerlimit:'-100',//下限值负无穷
+            defaultvalue:'0',//默认值
+            digit:'3'//要保留的小数位数
+        });
+
+        $('#input8').countNumber({
+            formulaString:'(&input1&+&input2&)&/&(&input6&*&input7&)',//传入的公式字符串
+            digit:4,//保留小数位数
+            readonly: true //结果框只读
+        });
+
+
+</script>
+<script>
+    $.fn.dataTable.ext.errMode = 'none';//去除datatable警告
+
+
+    $(document).ready(function() {
+        var table = $('#zibiaotable').DataTable({
+            "dom": '<"datatable"t><"inform"i><"pagin"p><"rocess"r>',
+            "deferRender": true,//数据预加载
+            "pagingType": "full_numbers",//全分页
+            "language": {//分页样式
+                "info": "共_TOTAL_条记录",
+                "sSearch": "全局搜索:",
+                "sEmptyTable": "表中数据为空",
+                "sLoadingRecords": "载入中...",
+                "sZeroRecords": "没有匹配结果",
+                "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                "oPaginate": {
+                    "sFirst":      "首页",
+                    "sLast":       "尾页",
+                    "sNext":       "下一页",
+                    "sPrevious":   "上一页",
+                },
+                "lengthMenu":     "_MENU_",//改变长度样式
+                "paginate": {
+                    "processing": "正在处理中。。。"
+                }
+            },
+            "autoWidth":true,
+            scrollY: 300,//固定表格滚动高度
+            scrollCollapse: true,
+            stateSave: false,//保存最后一次操作状态
+            scrollX: true,//水平滚动
+            colReorder: false,//表头拖动
+            "columns": [
+                { "title": "Engine"},
+                { "title": "Browser" },
+                { "title": "Platform" },
+                { "title": "Version" },
+                { "title": "Grade" }
+            ]
+        });
+        $('#input9').countTablecolumns({
+            formula:'+',
+            digit:2,
+            readonly:true,
+            tableName:table
+        });
+
+        var counter = 0;
+        var arr;
+        $('.addbtn').on( 'click', function () {
+                table.row.add([
+                    counter + '.1',
+                    counter + '.2',
+                    counter + '.3',
+                    counter + '.4',
+                    counter + '.5'
+                ]).draw();
+                counter++;
+                arr = table.columns().data()[0];
+//                console.log(table.columns().data()[0]);
+//                for (var i = 0; i < table.columns().data()[0].length; i++) {
+//                    arr.push(table.columns().data()[0][i]);
+//                    console.log(table.columns().data()[0][i]);
+//                }
+//            console.log(sum);
+            }
+        );
+        $('.addbtn').click();
+
+        $('.debtn').on( 'click', function () {
+            table.row().remove().draw( false );
+            arr = table.columns().data()[0];
+//            console.log(table.columns().data()[0]);
+        })
+    } );
+
+
+
+
+
+//    $.when.apply(null, arr).done(callback);
+
+
+
+
+</script>
+
+</html>

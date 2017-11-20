@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="plus/css/daterangepicker-bs3.css" rel="stylesheet" />
+
+    <link  href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/dataTables.foundation.min.css" rel="stylesheet" />
+    <link href="css/responsive.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedHeader.foundation.min.css" rel="stylesheet" />
+    <link href="css/scroller.foundation.min.css" rel="stylesheet" />
+    <link href="css/colReorder.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedColumns.foundation.min.css" rel="stylesheet" />
+    <link href="css/fileinput.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/subtable.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/fakeloader.css" />
+    <title>创游云ERP</title>
+</head>
+<body>
+<!--//预加载-->
+<div class="fakeloader"></div>
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/fakeloader.js"></script>
+<script>
+    (function ($) {
+        $(".fakeloader").fakeLoader({
+            timeToHide:1000,//消失时间
+            bgColor:"#eee",//背景颜色
+            spinner:"spinner3",//控件号
+            zIndex: '9999999',//至于顶层
+            opacity:'1'//透明度
+        });
+    })(jQuery);
+</script>
+<div class="widget">
+    <div class="widget-header bordered-bottom bordered-blue">
+        <span class="widget-caption">子表操作</span>
+
+        <div class="widget-buttons">
+            <a class="goback" id="back-toggler" onclick="javascript:history.go(-1);">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="widget-body no-padding">
+        <div class="widget-main ">
+            <div class="panel-group accordion" id="accordion">
+
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">
+                                物料仓库信息
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="false" style="height: auto;">
+                        <div class="panel-body border-palegreen">
+                            <div class="table-scrollable">
+                                <table id="zibiaotable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th class="tha0">物料编码：FDSHIHOHOOA-12CSD</th>
+                                        <th class="tha1">物料型号：LIUONO-43FDSS</th>
+                                        <th class="tha2">部门：FDS3</th>
+                                        <th class="tha3">产品组：GFDS34</th>
+                                        <th class="tha4">仓库：FDS3</th>
+                                        <th class="tha5">仓库数量：23432432</th>
+
+                                    </tr>
+                                    </thead>
+                                    <thead>
+                                    <tr>
+                                        <th class="thb0">操作</th>
+                                        <th class="thb1">处理状态</th>
+                                        <th class="thb2">订单编号</th>
+                                        <th class="thb3">型号</th>
+                                        <th class="thb4">数量</th>
+                                        <th class="thb5">取货仓库</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+                                        <th class="thb6">销售金额</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><a href='javascript:' class="btn btn-info btn-xs edit trchex "><i class="fa fa-mail-reply"></i> 撤销</a></td>
+                                        <td>历史申请</td>
+                                        <td>FDSFDS</td>
+                                        <td>FDS</td>
+                                        <td>10.00</td>
+                                        <td>FDS</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+                                        <td>1100.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href='javascript:' class="btn btn-info btn-xs edit trchex "><i class="fa fa-mail-reply"></i> 撤销</a></td>
+                                        <td><select class="ztrset " >
+                                            <option>子订单生成pi</option>
+                                            <option>历史申请</option>
+                                        </select></td>
+                                        <td>FDSFDS</td>
+                                        <td><input class="ztrinpt form-control"/></td>
+                                        <td>10.00</td>
+                                        <td>FDS</td>
+                                        <td><div class="input-group"style="width: 188px;" >
+                                            <input  class="form-control schinpt" disabled="disabled" style="width: 120px;height: 20px"/>
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default schbtn" ><i class="fa fa-search"></i></a>
+                                            </span>
+                                        </div></td>
+
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <select class="ztrset " id="ztrset1" >
+                                            <option>子订单生成pi</option>
+                                            <option>历史申请</option>
+                                            <option>销售1</option>
+                                            </select>
+                                        </td>
+                                        <td> <input class=" date-picker datepk " id="id-date-picker-1"  type="text" data-date-format="yyyy-mm-dd" placeholder="请输入日期"/></td>
+                                        <td><input class="ztrinpt form-control"/></td>
+                                        <td><input type="text" name="reservation" id="reservationtime" class=" timerange" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM"  class="span4"/></td>
+                                        <td><input id="file-1" type="file"  multiple class="file" data-overwrite-initial="false" data-min-file-count="2" ></td>
+                                        <td><div class="input-group"style="width: 188px;" >
+                                            <input  class="form-control schinpt" disabled="disabled" style="width: 120px;height: 20px"/>
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default schbtn" ><i class="fa fa-search"></i></a>
+                                            </span>
+                                        </div></td>
+
+
+
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                                <div class="form-group-l   col-lg-3 col-md-3 col-sm-3 detailbtns" >
+                                    <button type="button"   class="btn btn-default okbtn">
+                                        <i class="fa fa-save"></i> 保存
+                                    </button>
+                                </div>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="schpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h6 class="modal-title" >查看详情</h6>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div >
+                            <form role="form">
+                                    <fieldset>
+                                    <legend>信息</legend>
+                                    <label>信息1：<span>基础信息</span>&nbsp;&nbsp;&nbsp;&nbsp;信息2：<span>基础信息</span></label>
+                                    <label>信息1：<span>基础信息</span></label>
+                                    <label>信息1：<span>基础信息</span></label>
+                                    </fieldset>
+                                <fieldset>
+                                    <legend>信息</legend>
+                                    <label>信息1：<span>基础信息</span></label>
+                                    <label>信息1：<span>基础信息</span></label>
+                                    <label>信息1：<span>基础信息</span></label>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+<script src="assets/js/select2/select2.js"></script>
+<script src="assets/js/tagsinput/bootstrap-tagsinput.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.foundation.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<script src="js/responsive.foundation.min.js"></script>
+<script src="js/dataTables.fixedHeader.min.js"></script>
+<script src="js/dataTables.scroller.min.js"></script>
+<script src="js/dataTables.fixedColumns.min.js"></script>
+<script src="js/dataTables.colReorder.min.js"></script>
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+<script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+<script src="js/fileinput/fileinput.js"></script>
+<script src="js/fileinput/zh.js"></script>
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+<script src="assets/js/toastr/toastr.js"></script>
+<script src="js/subtable.js"></script>
+<script type="text/javascript" src="js/fakeloader.js"></script>
+
+
+<script>
+    $('#ztrset1').select2();
+    $('.date-picker').datepicker();
+    $('#timepicker1').timepicker();
+    $('#reservationtime').daterangepicker();
+    Zibiaotable().init();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>上海宽屏</title>
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+ 
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/self.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+
+    <!--  /Loading Container -->
+
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container ">
+
+
+            <!-- /Page Sidebar -->
+
+            <!-- 要加个 cypage-content-->
+            <div class="page-content cypage-content">
+
+
+                <!-- /Page Header -->
+                <!-- Page Body -->
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="widget ">
+
+
+                                <div class="widget-body bordered-left bordered-warning">
+                                    <!--操作菜单-->
+                                    <div class="table-toolbar">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-sm-12 col-xs-12">
+
+
+
+                                                        <form class="form-inline" role="form">
+                                                            <div class="form-group">
+
+
+                                                             <div class="cybtn">   <a id="" href="javascript:void(0);" class="btn btn-default blue">
+                                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                                    批量删除
+                                                             </a></div>
+
+
+                                                             <div class="cybtn">   <a id="" onclick="addnew()" href="javascript:void(0);" class="btn btn-default blue ">
+                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                    新增客户
+                                                             </a></div>
+                                                                <div class="cybtn"> <select class="form-control" name="country" data-bv-field="country">
+                                                                    <option value="">销售部</option>
+                                                                    <option value="FR">采购部</option>
+                                                                    <option value="DE">财务部</option>
+                                                                </select></div>
+
+                                                                <div class="cybtn"><input type="email" class="form-control" id="exampleInputEmail2" placeholder="输入搜索条件"></div>
+                                                                <div class="cybtn"> <button type="submit" class="btn btn-default blue">搜索</button></div>
+
+
+                                                            </div>
+
+
+
+                                                        </form>
+
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+
+                                    <!--表格数据-->
+                                    <div class="table-scrollable">
+                                        <table class="table table-striped table-bordered table-hover main-table display responsive no-wrap" width="100%" id="simpledatatable">
+                                            <thead>
+                                            <tr>
+                                                <th class="operationx"><label><input type="checkbox" > <span class="text"></span></label></th>
+                                                <th class="operationc">操作</th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 客户编号</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 用户名称</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 客户类型</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 客户阶段</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 客户来源</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 手机</textarea>
+                                                </th>
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 邮箱</textarea>
+                                                </th>
+
+                                                <th class="th-belong" >
+                                                    <textarea class="form-control text-belong" rows="1" disabled="disabled"> 新增时间</textarea>
+                                                </th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tfoot>
+                                            <tr>
+                                                <th>合计</th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                            </tfoot>
+                                            <thead id="searchhead" >
+                                            <tr id="searchcontext" style="display:none;">
+                                                <th rowspan="1" colspan="1"></th>
+                                                <th rowspan="1" colspan="1"></th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm"/>
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm"/>
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm"/>
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm"/>
+                                                </th>
+
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm">
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm">
+                                                </th>
+                                                <th rowspan="1" colspan="1">
+                                                    <input type="text"name="$item.cySysFieldTranslateBaseName" placeholder="请输入搜索条件" class="form-control input-sm">
+                                                </th>
+
+                                                <th rowspan="1" colspan="1">
+
+                                                    <input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" placeholder="请输入搜索条件">
+                                                </th>
+
+
+                                            </tr>
+                                            </thead>
+
+                                            <!--数据段-->
+                                            <tbody >
+
+                                            <!----------------------------数据模块 -->
+                                            <tr >
+                                                <td>
+                                                    <label><input type="checkbox" > <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr><tr>
+                                                <td>
+                                                    <label><input type="checkbox"> <span class="text"></span></label>
+                                                </td>
+                                                <td>
+                                                    <a onclick="showzibao()" href="javascript:void(0)" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 查看详情</a>
+                                                </td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                                <td>xxx</td>
+                                            </tr>
+
+
+
+                                            </tbody>
+
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+    
+    
+    
+    
+    
+    
+
+
+ </div>
+
+
+
+
+
+
+
+
+   <!--Basic Scripts-->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+   <!--Beyond Scripts-->
+   <script src="assets/js/beyond.min.js"></script>
+
+   <!--Page Related Scripts-->
+   <script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+   <script src="assets/js/datatable/ZeroClipboard.js"></script>
+   <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+   <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+   <script src="assets/js/datatable/datatables-init.js"></script>
+
+   <!--Bootstrap Date Picker-->
+   <script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+
+   <!--Bootstrap Time Picker-->
+   <script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+
+   <!--Bootstrap Date Range Picker-->
+   <script src="assets/js/datetime/moment.js"></script>
+   <script src="assets/js/datetime/daterangepicker.js"></script>
+    <script type="text/javascript">
+InitiateSimpleDataTable.init();
+InitiateEditableDataTable.init();
+InitiateExpandableDataTable.init();
+InitiateSearchableDataTable.init();
+
+$('.date-picker').datepicker();
+
+
+
+/*$(document).ready(function(){
+	$("#myModal").modal();  
+});*/
+    	
+function opsearch(){
+if(document.getElementById('searchcontext').style.display=='none'){
+   document.getElementById('searchcontext').style.display=''; 
+   document.getElementById('open-search').innerHTML = "	<i class='glyphicon  glyphicon-remove'></i> 关闭查询";
+}
+else{
+   document.getElementById('searchcontext').style.display='none';
+   document.getElementById('open-search').innerHTML ="	<i class='glyphicon glyphicon-search'></i>开启查询";
+}
+}
+
+function myModal(){
+			$("#myModal").modal();  
+}
+//全选反选
+
+
+
+
+function showzibao(){
+    $("#zibiao").toggle();
+}
+function addnew() {
+    $("#addnew").toggle();
+}
+
+
+
+</script>    
+    
+
+    
+    
+    
+    
+    
+    
+</body>
+<!--  /Body -->
+</html>

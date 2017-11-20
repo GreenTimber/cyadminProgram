@@ -1,0 +1,101 @@
+
+.guidcontainer{
+    width:90%;
+    height:480px;
+    position:relative;
+    border:3px solid #f0f0f0;
+    -moz-box-shadow:0px 0px 10px #222;
+    -webkit-box-shadow:0px 0px 10px #222;
+    box-shadow:0px 0px 10px #222;
+    margin: 20px 20px 20px 20px;
+}
+.btncontent{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    left: 0px;
+}
+.lccontent1,.lccontent2,.lccontent3,.lccontent4,.lccontent5{
+    background-color: #fff;
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    float: right;
+    bottom: 0px;
+    right: 0;
+    border-left-style: ridge;
+    padding: 30px;
+}
+.lctitle{
+    width: 80%;
+    height: 40%;
+    position: relative;
+    float: right;
+    border-left-style: ridge;
+    background-color: #fff;
+    border-bottom-style: ridge;
+}
+.lctitle img{
+    width: 80%;
+    height: 90%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.btncontent button{
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    left: 10%;
+    margin-right: 25px;
+}
+.bottomarrdiv{
+    width: 80%;
+    height: 50px;
+    left: 10%;
+    position: relative;
+}
+
+.bottomarr{
+    width: 50px;
+    height: 50px;
+    /*left: 35%;*/
+    position: relative;
+    margin-top: 10px;
+}
+.st-1img{
+    width: 40%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+.st-1img img{
+    width: 50%;
+    height: 80%;
+    margin-top: 30px;
+    margin-left: 70px;
+}
+.rightarr{
+    width: 20%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+.rightarr img{
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    position: relative;
+
+}
+.st-1span{
+    width: 40%;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+.divspan1,.divspan2,.divspan3,.divspan4,.divspan5{
+    margin-top: 40px;
+}

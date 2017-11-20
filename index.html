@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<!-- Head -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+
+		<meta name="description" content="Dashboard" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+		<!--Basic Styles-->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+		<!--Fonts-->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<!--Beyond styles-->
+		<link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/demo.min.css" rel="stylesheet" />
+		<link href="assets/css/typicons.min.css" rel="stylesheet" />
+		<link href="assets/css/animate.min.css" rel="stylesheet" />
+		<link id="skin-link" href="" rel="stylesheet" type="text/css" />
+		<link href="css/dcalendar.picker.css" rel="stylesheet" type="text/css" />
+
+		<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+		<script src="assets/js/skins.min.js"></script>
+		<link href="css/self.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+
+	<body>
+		<div class="main-container container-fluid">
+			<div class="page-container">
+					<div class="page-body">
+				   <div class="row">
+					 <div class="col-lg-12 col-md-12 col-sm-12 ">
+					 <div class="col-md-3 padding-5 themeprimary" >
+	                 <div class="well indexwell margin-bottom-10 ">
+	                 <div class="row ">
+														<div class="databox  radius-bordered">
+															<div class="databox-left bg-themeprimary">
+																<div class="databox-piechart">
+																	<div id="users-pie" data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="76" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)">
+																		<i class="stat-icon icon-lg fa fa-tasks fz-large"></i>
+																	</div>
+																</div>
+															</div>
+															<div class="databox-right">
+																<div class="databox-text darkgray">仓库库存总数:</div>
+																<span class="databox-number ">323410件</span>
+															</div>
+														</div>
+													   </div>
+	                 	 </div> </div>
+	                 	
+	                 	 <div class="col-md-3 padding-5 yellow">
+	                 <div class="well indexwell margin-bottom-10 ">
+	                 <div class="row ">
+														<div class="databox  radius-bordered">
+															<div class="databox-left bg-yellow">
+																<div class="databox-piechart">
+																	<div id="users-pie" data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="76" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)">
+																		<i class="stat-icon icon-lg glyphicon glyphicon-transfer fz-large"></i>
+																	</div>
+																</div>
+															</div>
+															<div class="databox-right">
+																<div class="databox-text darkgray">今日采购订单总数：</div>
+																<span class="databox-number ">200</span>
+															</div>
+														</div>
+													   </div>
+	                 	 </div> </div>
+	                 	 
+	                 	 
+	                 	 
+	                 	  <div class="col-md-3 padding-5 success">
+	                 <div class="well indexwell margin-bottom-10">
+	                 <div class="row ">
+														<div class="databox  radius-bordered">
+															<div class="databox-left bg-success">
+																<div class="databox-piechart">
+																<div id="users-pie" data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="76" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)">
+																		<i class="stat-icon icon-lg glyphicon glyphicon-saved fz-large"></i>
+																	</div>
+																</div>
+															</div>
+															<div class="databox-right">
+																<div class="databox-text darkgray">今日销售订单总数：</div>
+																<span class="databox-number ">1000</span>
+															</div>
+														</div>
+													   </div>
+	                 	 </div> </div>
+	                 	 
+	                 	 
+	                 	   <div class="col-md-3 padding-5 orange" >
+	                 <div class="well indexwell margin-bottom-10 ">
+	                 <div class="row ">
+														<div class="databox  radius-bordered">
+															<div class="databox-left bg-orange">
+																<div class="databox-piechart">
+																<div id="users-pie" data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="76" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)">
+																		<i class="stat-icon icon-lg fa fa-calculator fz-large"></i>
+																	</div>
+																</div>
+															</div>
+															<div class="databox-right">
+																<div class="databox-text darkgray">今日总销售额</div>
+																<span class="databox-number ">240万</span>
+															</div>
+														</div>
+													   </div>
+	                 	 </div> </div>
+	                 	 </div>
+	                </div>
+ <!-- 选卡模块   END--------------------------->	
+
+
+<!-- 待办与通知 --------------------------->	
+
+ <div class="row">
+	                <div class="col-lg-12 col-md-12 col-sm-12 ">
+			           <div class="col-lg-8 col-md-8 col-sm-12 padding-5 ">
+					 
+					 		
+					 	<div class="orders-container">
+                                <div class="orders-header">
+                                    <h6>待办事项处理</h6>
+                                    <a href="#" data-toggle="config" class="more-msg" >
+														更多：
+													</a>
+                                </div>
+                                <ul class="orders-list indexlist">
+                                    <!--纪录样板-------------------------> 
+                                     <li class="order-item dangermark">
+                                        <div class="row">
+                                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                      <!--纪录样板end------------------------->
+                                      <!--纪录样板------------------------->
+                                      <li class="order-item warningmark">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                      <!--纪录样板------------------------->
+                                        <li class="order-item successmark">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+<!--纪录样板end------------------------->
+                                      <!--纪录样板------------------------->
+                                        <li class="order-item successmark">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                      <!--纪录样板------------------------->
+                                        <li class="order-item successmark">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                      <!--纪录样板------------------------->
+                                        <li class="order-item successmark">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">待办事件内容及问题描述...</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                 
+                                
+                                </ul>
+                               
+                            </div>
+					 	
+					 </div>
+					 
+				  <div class="col-lg-4 col-md-4 col-sm-12 padding-5  ">
+					 	<div class="">
+					 	
+					 	<div class="orders-container a-style">
+                                <div class="orders-header">
+                                    <h6>公告通知</h6>
+                                    <a href="#" data-toggle="config" class="more-msg" >
+														更多：
+													</a>
+                                </div>
+                                <ul class="orders-list indexlist">
+                                	<!--纪录样板------------------------->
+                                     <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                    <!--纪录样板------------------------->
+                                      <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                      <!--纪录样板end------------------------->
+                                    <!--纪录样板------------------------->
+                                        <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                    <!--纪录样板------------------------->
+                                          <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                    <!--纪录样板------------------------->
+                                          <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                    <!--纪录样板------------------------->
+                                          <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>01-19</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <a class="currency">【服务公告】网页防篡改保护系统部署通知</a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板end------------------------->
+                                </ul>
+                               
+                            </div>
+					 	</div>
+					 	
+					 </div>
+					 
+					</div> 
+ </div>
+ <!-- 待办与通知   END--------------------------->	
+
+
+
+<!-- 统计与模板下载 --------------------------->	
+
+ <div class="row">
+	                <div class="col-lg-12 col-md-12 col-sm-12 ">
+			           <div class="col-lg-8 col-md-8 col-sm-12 padding-5 ">
+					 	<div class="orders-container">
+                                         <div class="widget-main ">
+                                                <div class="tabbable">
+                                                    <ul class="nav nav-tabs tabs-flat" id="myTab11">
+                                                        <li class="active">
+                                                            <a data-toggle="tab" href="#block1">
+                                                                2017年采购订单统计
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tab" href="#block2">
+                                                               2017年销售订单统计
+                                                            </a>
+                                                        </li>
+                                                          <li>
+                                                            <a data-toggle="tab" href="#block3">
+                                                               2017年预算支出统计
+                                                            </a>
+                                                        </li>
+             
+                                                    </ul>
+                                                    <div class="tab-content tabs-flat">
+                                                        <div id="block1" class="tab-pane  in active ">
+                                                          
+                                                          	
+                                                          	<div id="main" style="width: 100%;height:230px;"></div>
+                                                          
+                                                        </div>
+
+                                                        <div id="block2" class="tab-pane">
+                                                        
+                                                        <div id="main3"></div>
+                                                       
+                                                        </div>
+                                                        <div id="block3" class="tab-pane">
+                                                          <div id="main2"></div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                               
+                            </div>
+					 	
+					 </div>
+					 
+				  <div class="col-lg-4 col-md-4 col-sm-12 padding-5  ">
+					 	<div class="">
+					 	
+					 	<div class="orders-container a-style">
+                                <div class="orders-header">
+                                    <h6>通用模板下载</h6>
+                                    <a href="#" data-toggle="config" class="more-msg" >
+														更多：
+													</a>
+                                </div>
+                                <ul class="orders-list indexlist">
+                                	<!--纪录样板------------------------->
+                                     <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                    <i class="glyphicon glyphicon-paperclip"></i>
+                                                     <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--纪录样板END------------------------->
+                                    <!--纪录样板------------------------->
+                                      <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                 <i class="glyphicon glyphicon-paperclip"></i>
+                                                    <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                      <!--纪录样板END------------------------->
+                                    <!--纪录样板------------------------->
+                                        <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                      <i class="glyphicon glyphicon-paperclip"></i>
+                                                     <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   <!--纪录样板END------------------------->
+                                   
+                                   <!--纪录样板------------------------->
+                                        <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                      <i class="glyphicon glyphicon-paperclip"></i>
+                                                     <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   <!--纪录样板END------------------------->
+                                   <!--纪录样板------------------------->
+                                        <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                      <i class="glyphicon glyphicon-paperclip"></i>
+                                                     <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   <!--纪录样板END------------------------->
+                                   <!--纪录样板------------------------->
+                                        <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item-left">
+                                              
+                                                <div class="item-time">
+                                                      <i class="glyphicon glyphicon-paperclip"></i>
+                                                     <a>下载</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">订单审批导入模板</span>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                   <!--纪录样板END------------------------->
+                              
+                                   
+                           
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                  
+                                </ul>
+                               
+                            </div>
+					 	</div>
+					 	
+					 </div>
+					 
+					</div> 
+ </div>
+ <!-- 统计与模板下载   END--------------------------->
+						</div>
+
+					</div>
+					<!-- /Page Body -->
+			</div>
+			<!-- /Page Container -->
+			<!-- Main Container -->
+
+	
+
+		<!--Basic Scripts-->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!--Beyond Scripts-->
+		<script src="assets/js/beyond.js"></script>
+
+		<!--Page Related Scripts-->
+		<!--Sparkline Charts Needed Scripts-->
+		<script src="assets/js/charts/sparkline/jquery.sparkline.js"></script>
+		<script src="assets/js/charts/sparkline/sparkline-init.js"></script>
+
+		<!--Easy Pie Charts Needed Scripts-->
+		<script src="assets/js/charts/easypiechart/jquery.easypiechart.js"></script>
+		<script src="assets/js/charts/easypiechart/easypiechart-init.js"></script>
+
+		<script type="text/javascript" src="js/dcalendar.picker.js"></script>
+
+		<script type="text/javascript">
+			$('#mycalendar').dcalendar();
+		</script>
+
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/macarons.js"></script>
+<!-- echart-->
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/macarons.js"></script>
+<script type="text/javascript" src="js/echarts.part.js"></script>
+	</body>
+	<!--  /Body -->
+
+</html>

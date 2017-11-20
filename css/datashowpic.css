@@ -1,0 +1,210 @@
+
+/*修改区*/
+.colmarign{
+    text-align: center;
+    height: 130px;
+}
+.jitainumber{
+    font-size: 10px;
+
+}
+
+.jtico{
+    width: 60%;
+}
+
+/*机台*/
+
+.state1{
+    width: 15px;
+    height: 15px;
+    border-radius:25px;
+    background-color: #FF0000;
+    position: absolute;
+    margin-left: 58%;
+    margin-top: -41%;
+    filter:blur(0.5px);
+    animation: warning 0.2s;
+    animation-direction:alternate;
+    animation-iteration-count:infinite;
+}
+.state2{
+    width: 15px;
+    height: 15px;
+    border-radius:25px;
+    background-color: #ffff00;
+    position: absolute;
+    margin-left: 58%;
+    margin-top: -41%;
+    filter:blur(0.5px);
+    animation: warning 0.5s;
+    animation-direction:alternate;
+    animation-iteration-count:infinite;
+}
+.state3{
+    width: 15px;
+    height: 15px;
+    border-radius:25px;
+    background-color: #3a945b;
+    position: absolute;
+    margin-left: 58%;
+    margin-top: -41%;
+    filter:blur(0.5px);
+    animation: warning 1s;
+    animation-direction:alternate;
+    animation-iteration-count:infinite;
+}
+
+
+@keyframes warning
+{
+    from {transform:none;filter:blur(0.5px);}
+    to {transform:scale(1.3,1.3);filter:blur(1px);}
+}
+
+
+/* Paging */
+#paging {
+    font-size: 13px;
+    overflow: hidden;
+    width: 100%;
+    height: 40px;//
+    margin: 2px;
+    text-align: right;
+    color: #999;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+#paging .first,
+#paging .last,
+#paging .prev,
+#paging .next,
+#paging .list li {
+    display: inline-block;
+    font-size: 13px;
+    height: 26px;
+    line-height: 25px;
+    background: #FAF9F8;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    cursor: default;
+    border-radius: 3px;
+    vertical-align: top;
+    margin: 10px 1px 5px 5px;
+
+}
+
+#paging .list {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+#paging .list li {
+    width: 30px;
+    padding: 0;
+    color: #008CBA;
+    cursor: default;
+    font-weight: bold;
+    text-align: center;
+    list-style-type: none;
+}
+#paging .list li.cur {
+    color: #fff;
+    background-color: #008CBA;
+    border-color: #ddd;
+}
+#paging .go {
+    display: none;
+    position: relative;
+    max-width: 140px;
+    height: 26px;
+    border-radius: 3px;
+    margin: 9px;
+}
+#paging .go input {
+    width: 70%;
+    height: 26px;
+    padding: 0 6px;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #008CBA;
+    border: none; outline: none;
+}
+#paging .go button{
+    top: -40px;
+    line-height: 4px;
+    width: 30px;
+    height: 26px;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 7px;
+}
+#paging .disable {
+    color: #bfbfbf;
+    cursor: not-allowed;
+}
+
+#paging input::-webkit-input-placeholder { color: #bfbfbf; }
+#paging input::-moz-input-placeholder { color: #bfbfbf; }
+#paging input:-ms-input-placeholder { color: #bfbfbf; }
+
+
+/* Paging Result */
+#resultBox {
+    width: 960px;
+    height: 200px;
+    margin: 0 auto;
+    font-size: 0;
+}
+#resultBox dl {
+    overflow: hidden;
+    display: inline-block;
+    width: 316px;
+    padding: 35px 0;
+    vertical-align: top;
+    border-top: 1px solid #e8e8e8;
+}
+#resultBox dt {
+    float: left;
+    margin-right: 12px;
+}
+#resultBox dt a {/*
+  display: block;
+  width: 100%;
+  height: 100%;*/
+}
+#resultBox dt a img {
+    max-width: 100px;
+    max-height: 150px;
+    vertical-align: top;
+}
+#resultBox dd {
+    overflow: hidden;
+    display: block;
+    padding-right: 40px;
+}
+#resultBox dd a {
+    display: inline-block;
+    padding: 6px 0;
+    margin-bottom: 10px;
+    line-height: 24px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #37A;
+}
+#resultBox dd a:hover {
+    color: #fff;
+    background-color: #37A;
+}
+#resultBox dd p {
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+

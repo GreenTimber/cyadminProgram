@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="plus/css/daterangepicker-bs3.css" rel="stylesheet" />
+
+
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/dataTables.foundation.min.css" rel="stylesheet" />
+    <link href="css/responsive.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedHeader.foundation.min.css" rel="stylesheet" />
+    <link href="css/scroller.foundation.min.css" rel="stylesheet" />
+    <link href="css/colReorder.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedColumns.foundation.min.css" rel="stylesheet" />
+    <link href="css/fileinput.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/insert.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="plus/css/wangEditor.css" />
+    <link rel="stylesheet" type="text/css" href="css/cyModal.css" />
+    <title>创游云ERP</title>
+</head>
+<body>
+<!--//预加载-->
+<div id="cyreload">
+    <div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div> <div class="imglogodiv"><img class="imglogo" src="images/logo.png"/></div>
+</div>
+
+<div class="widget">
+    <div class="widget-header bordered-bottom bordered-blue">
+        <span class="widget-caption">采购订单</span>
+
+        <div class="form-group-l   detailbtns" >
+            <a class="goback btn btn-sky btn-sm okbtn" onclick="javascript:history.go(-1);" title="返回上级页面"> <i
+                    class="glyphicon glyphicon-refresh"></i>返回
+            </a>
+        </div>
+        <div class="form-group-l    detailbtns" >
+            <button type="button"   class="btn btn-sky btn-sm okbtn" title="保存此页面" onclick="savedata();">
+                <i class="fa fa-save"></i> 保存
+            </button>
+        </div>
+        <div class="form-group-l   detailbtns" >
+            <a class="refresh btn btn-sky btn-sm okbtn" id="refresh-toggler" href="" title="刷新此页面"> <i
+                    class="glyphicon glyphicon-refresh"></i>刷新
+            </a>
+        </div>
+    </div>
+
+    <div class="widget-body no-padding">
+        <div class="widget-main ">
+            <div class="panel-group accordion" id="accordion">
+                    <div class="panel-heading ">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+                                信息编辑
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="height: auto;">
+                        <div class="panel-body border-red">
+                                <div class="form-inline">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6" >
+                                            <label class="col-xs-4"><span>客户姓名：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" class="form-control "  placeholder="请输入条件"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class=" col-xs-4"><span>客户地址：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" class="form-control"  placeholder="请输入条件"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+
+                                            <label class="col-xs-4">  <span>选择供应商：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <div class="popbtn">
+                                                    <input type="text" class="form-control sltval"   readonly="readonly"/>
+                                                    <button class="btn btn-default sltbtn col-xs-2" type="button" >选择</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span >选择日期：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" readonly="readonly"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4">  <span>选择时间范围：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input type="text" name="reservation" id="reservationtime" class="form-control" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM"  class="span4" readonly="readonly"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4">   <span>
+                                                    选择时间：
+                                    </span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <input class="form-control" id="timepicker1" type="text" readonly="readonly"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span>选择类型：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <select class="selectsearch">
+                                                    <option value="1">采购</option>
+                                                    <option value="2">销售</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-select2 col-lg-3 col-md-4 col-sm-6">
+                                            <label class="col-xs-4"><span>选择类型：</span></label>
+                                            <div class="col-xs-8 forminput">
+                                                <select class="selectsearch col-xs-12" id="select2se" style="width: 80%;">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="table-scrollable">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 20px;">
+                                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-success" checked="checked">
+                                                    <span class="text">Success</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-success" checked="checked">
+                                                    <span class="text">Success</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-success" checked="checked">
+                                                    <span class="text">Success</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="colored-success" checked="checked">
+                                                        <span class="text">Success</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="colored-success" checked="checked">
+                                                        <span class="text">Success</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="colored-success" checked="checked">
+                                                        <span class="text">Success</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" class="colored-success" checked="checked">
+                                                        <span class="text">Success</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="control-group col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input name="form-field-radio" type="radio" checked="checked">
+                                                        <span class="text">Basic </span>
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input name="form-field-radio" type="radio" class="inverted">
+                                                        <span class="text">Inverted</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class=" col-md-12 col-sm-12 col-lg-12 formtxare">
+                                        <label class="col-xs-4"><span>客户地址：</span></label>
+                                        <textarea class=" formtextarea" ></textarea>
+                                    </div>
+
+                                    <div class=" col-md-12 col-sm-12 col-lg-12 formfileup " >
+                                        <label class="col-xs-4"><span>附件：</span></label>
+                                        <input id="file-1" type="file"  multiple class="file" data-overwrite-initial="false" data-min-file-count="2" >
+                                    </div>
+
+
+
+
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                            <div class="con4">
+                                                <label for="fileup" class="labfileupbtn"><img src="images/plus.png" /><span>点击上传身份证正面</span>
+
+
+
+
+
+                                                </label>
+                                                <input type="file" id="fileup" style="display: none;"/>
+                                                <span class="btn">上传<input type="button" class="upload_pic" id="scpicup" /></span>
+                                            </div>
+                                        </div>
+
+
+                                </div>
+
+                            </div>
+                                <div id="editor">
+
+                                </div>
+
+                                <div id="editor1">
+
+                                </div>
+                                <button id="btn2">获取富文本1内容</button>
+                                    <div class="form-group-l   col-lg-3 col-md-3 col-sm-3 detailbtns" >
+                                        <button type="button"   class="btn btn-default okbtn">
+                                            <i class="fa fa-save"></i> 保存
+                                        </button>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">
+                                子表信息
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="false" style="height: auto;">
+                        <div class="panel-body border-palegreen">
+                            <div class="table-scrollable">
+                                <button class="addbtn btn-sm"><i class="fa fa-plus"></i>新增</button>
+                                <table id="zibiaotable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th class="th0">操作</th>
+                                        <th class="th1">订单编号</th>
+                                        <th class="th2">订单名称</th>
+                                        <th class="th3">订单类型</th>
+                                        <th class="th4">订单阶段</th>
+                                        <th class="th5">订单来源</th>
+                                        <th class="th6">订单状态</th>
+                                        <th class="th7">创建时间</th>
+                                        <th class="th8">创建时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <td><a  class="btn btn-info btn-xs edit tredit" href='javascript:gettreditpane();' ><i class="fa fa-edit"></i> 编辑</a><a href="#" class="btn btn-danger btn-xs delete trdelete"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    <td>Trident</td>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                                <div class="form-group-l   col-lg-3 col-md-3 col-sm-3 detailbtns" >
+                                    <button type="button"   class="btn btn-default okbtn">
+                                        <i class="fa fa-save"></i> 保存
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--选择弹框-->
+    <div class="modal fade " id="sltpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >编辑</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="table-scrollable">
+                    <table id="selecttable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th class="th0">订单编号</th>
+                            <th class="th1">订单名称</th>
+                            <th class="th2">订单类型</th>
+                            <th class="th3">订单阶段</th>
+                            <th class="th4">订单来源</th>
+                            <th class="th5">订单状态</th>
+                            <th class="th9">创建时间</th>
+                            <th class="th9">创建时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr >
+                            <td></td>
+
+                            <td>Trident1</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>Trident2</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>Trident3</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+                            <td>Trident</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="row">
+                        <div class="form-group-l  col-lg-3 col-md-3 col-sm-3 detailbtns">
+                            <button type="button" id="seldtable"  class="btn btn-default okbtn">
+                                <i class="fa fa-check"></i> 确定
+                            </button>
+                        </div> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增弹框-->
+    <div class="modal fade " id="addpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >新增</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="container-fluid">
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right" >客户编号:</label>
+                                                <div class="col-sm-6 formbtn">
+                                                    <input  class="form-control"  type="text" name="" placeholder="xxx">
+                                                </div>
+                                            </div>
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                                <div class="col-sm-6 formbtn" >
+                                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                                            </div>
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                                <div class="col-sm-6 formbtn" >
+                                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                                            </div>
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                                <div class="col-sm-6 formbtn" >
+                                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                                            </div>
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right" >客户类型:</label>
+                                                <div class="col-sm-6 formbtn">
+                                                    <select data-size="5"  class="" data-hide-disabled="true" data-live-search="true" name="" >
+                                                        <option value="1" >公司</option>
+                                                        <option value="2" selected>个人</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                                <label  class="col-sm-3 control-label no-padding-right mingxi">新增时间:</label>
+                                                <div class="col-sm-6 formbtn">
+                                                    <div class="controls">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                             </span><input type="text" class="form-control date-picker"  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group-l   col-lg-3 col-md-3 col-sm-3 detailbtns" >
+                            <button type="button"   class="btn btn-default okbtn">
+                                <i class="fa fa-save"></i> 保存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--子表编辑-->
+    <div class="modal fade " id="editpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >编辑</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="container-fluid">
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right" >客户编号:</label>
+                                <div class="col-sm-6 formbtn">
+                                    <input  class="form-control"  type="text" name="" placeholder="xxx">
+                                </div>
+                            </div>
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                <div class="col-sm-6 formbtn" >
+                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                            </div>
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                <div class="col-sm-6 formbtn" >
+                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                            </div>
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right" >用户名称:</label>
+                                <div class="col-sm-6 formbtn" >
+                                    <input  class="form-control"  type="text" name="" placeholder="xxx"></div>
+                            </div>
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right" >客户类型:</label>
+                                <div class="col-sm-6 formbtn">
+                                    <select data-size="5"  class="" data-hide-disabled="true" data-live-search="true" name="" >
+                                        <option value="1" >公司</option>
+                                        <option value="2" selected>个人</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group-l col-lg-6 col-md-6 col-sm-6" >
+                                <label  class="col-sm-3 control-label no-padding-right mingxi">新增时间:</label>
+                                <div class="col-sm-6 formbtn">
+                                    <div class="controls">
+                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                             </span><input type="text" class="form-control date-picker" id="reservation" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group-l   col-lg-3 col-md-3 col-sm-3 detailbtns" >
+                            <button type="button"   class="btn btn-default okbtn">
+                                <i class="fa fa-save"></i> 保存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+<script src="assets/js/select2/select2.js"></script>
+<script src="assets/js/tagsinput/bootstrap-tagsinput.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.foundation.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<script src="js/responsive.foundation.min.js"></script>
+<script src="js/dataTables.fixedHeader.min.js"></script>
+<script src="js/dataTables.scroller.min.js"></script>
+<script src="js/dataTables.fixedColumns.min.js"></script>
+<script src="js/dataTables.colReorder.min.js"></script>
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+<script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+<script src="js/fileinput/fileinput.js"></script>
+<script src="js/fileinput/zh.js"></script>
+<script src="assets/js/toastr/toastr.js"></script>
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+<script src="js/insert.js"></script>
+<script type="text/javascript" src="js/fakeloader.js"></script>
+<script src="js/muling.bootbox.js"></script>
+
+<script src="plus/js/wangEditor.js"></script>
+<script>
+
+    var map='';
+
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    editor.customConfig.uploadImgShowBase64 = true;
+    // 隐藏“网络图片”tab
+    editor.customConfig.showLinkImg = false;
+
+    document.getElementById('btn2').addEventListener('click', function () {
+    console.log(editor.txt.html());
+        // 读取HTML
+        var base64Data = editor.txt.html();
+        //读取 text
+        //alert(editor.txt.html());
+        alert(encodeURI(base64Data));//这个数据可以直接传入ajax post
+        map = encodeURI(base64Data);
+        editor1.txt.html(editor.txt.html());
+        ///console.log(map);
+    }, false)
+    editor.create();
+
+    var E1 = window.wangEditor;
+    var editor1 = new E1('#editor1');
+    editor1.customConfig.uploadImgShowBase64 = true;
+    // 隐藏“网络图片”tab
+    editor1.customConfig.showLinkImg = false;
+    editor1.create();
+
+</script>
+
+
+<script>
+    $('.date-picker').datepicker();
+    $('#timepicker1').timepicker();
+    Selecttable().init();
+    Zibiaotable().init();
+        $('#reservationtime').daterangepicker();
+    var data = [{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" },{ id: "dsa", text: "dsa" }];
+    $("#select2se").select2({
+        data: data,
+        placeholder:'请选择',
+        allowClear:true
+    })
+//清楚数据
+//    var forselect = $("#forselect");
+//    forselect.select2('val', '');
+//    forselect.find("option").remove();
+
+
+
+    console.log(moment().format());
+
+
+</script>
+<script>
+    //单个图片上传控件js
+    var fileupinput = document.getElementById("fileup");
+
+    if(typeof FileReader==='undefined'){
+        result.innerHTML = "抱歉，你的浏览器不支持 FileReader";
+        fileupinput.setAttribute('disabled','disabled');
+    }else{
+        fileupinput.addEventListener('change',readFile,false);
+    }
+     function readFile(){
+        var file = this.files[0];//获取上传文件列表中第一个文件
+        if(!/image\/\w+/.test(file.type)){
+            //图片文件的type值为image/png或image/jpg
+            alert("文件必须为图片！");
+            return false;
+        }
+         //console.log(file);
+
+        var reader = new FileReader();//实例一个文件对象
+        reader.readAsDataURL(file);//把上传的文件转换成url
+        reader.onload = function(e){
+            var image = new Image();
+            // 设置src属性
+            image.src = e.target.result;
+            image.width =300;
+            image.height =200;
+            image.onload = function(){
+                  $(".labfileupbtn").css("background-image","url("+image.src+")");
+                $(".labfileupbtn img").remove();
+                $(".labfileupbtn span").remove();
+
+            };
+        }
+
+         $("#scpicup").on("click",function () {
+             $.ajax({
+                 url: 'url' ,
+                 type: 'POST',
+                 data: file,
+                 async: false,
+                 cache: false,
+                 contentType: false,
+                 processData: false,
+                 success: function (returndata) {
+                     alert(returndata);
+                 },
+                 error: function (returndata) {
+                     alert(returndata);
+                 }
+             });
+
+         })
+    };
+
+    
+
+
+    $("#scpicup").on("click",function () {
+            $(".dtscprogress").remove();
+            $(".labfileupbtn").append(" <div class=\"progress progress-striped dtscprogress\" >\n" +
+                "<div class=\"progress-bar progress-bar-info progresscolorbar\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 1%\">\n" +
+                "</div>\n" +
+                "</div>")
+        var i=1;
+        var time = 100;
+        var countper=setInterval(function(){
+            i+=1;
+            $(".progress-bar").css("width",""+(i/time)*100+"%");
+            stopcotper((i/time)*100);
+        }, 50);
+        function stopcotper(a) {
+            if(a==100){
+                clearInterval(countper);
+                $(".progresscolorbar").remove();
+                $(".dtscprogress").append("<div style='width: 100%;height: 100%;background-color: #00B83F'>上传成功！</div>")
+                i=1;
+            }
+        }
+
+    });
+
+</script>
+</body>
+</html>

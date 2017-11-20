@@ -1,0 +1,92 @@
+ .header-titles {
+				font-size: 16px;
+				border-bottom: 1px solid #DDDDDD;
+				border-left: 3px solid #5db2ff;
+			}
+			
+		
+
+/*well 块*/
+
+
+
+.indexwell .databox{width: 95%;margin-bottom:0px;margin-left: 3%;}
+.indexwell .databox .databox-text {
+				display: block;
+				font-size: 15px;
+				margin: 4px 0 2px;
+				position: relative;
+			}
+			
+.indexwell .databox .databox-number {
+    font-size: 27px;
+}
+
+.indexlist .dangermark{background: #f2dede;}
+.orders-container .orders-list .dangermark:hover {
+    background-color: #f2dede;;
+}
+.indexlist .warningmark{background: #fcf8e3;}
+.orders-container .orders-list .warningmark:hover {
+    background-color: #fcf8e3;;
+}
+
+
+
+.orders-container{ min-height: 300px;margin-bottom:10px;}
+.orders-container a{  cursor:pointer}
+.a-style a{color: rgb(137, 144, 154);text-decoration: none;cursor:pointer}
+.orders-container .orders-list .order-item .item-right .item-price {
+    font-size: 13px;
+    margin: 0px auto;
+    color: #666;
+}
+.orders-container .orders-list .order-item .item-right {
+    padding-left: 0;
+    text-align: left;
+}
+.orders-container .orders-list .order-item .item-left .item-time {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.orders-container .orders-header h6{width: 50%;float: left;color:rgb(75, 85, 106);}
+.orders-container .orders-header a{text-decoration: none; color:#4985B9;}
+
+
+.orders-container .orders-header .more-msg{float: right;}
+.orders-container .item-price{
+	overflow: hidden;
+    min-width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.orders-container .item-time a{color:#4985B9}
+.orders-container .item-price span{color:#666666}
+.orders-container .orders-list .order-item {
+    padding: 7.5px 10px;
+}
+
+
+
+/*well 块变色*/
+
+.themeprimary :hover{
+	background: #2dc3e8;
+}
+.yellow :hover{
+	background: #ffce55;
+}
+.success :hover{
+	background: #53a93f;
+}
+.orange :hover{
+	background: #fb6e52;
+}
+.themeprimary :hover .darkgray  ,.yellow :hover .darkgray ,.success :hover .darkgray,.orange :hover .darkgray{
+	color: #FFFFFF !important;
+}
+
+
+.themeprimary :hover .databox-number ,.yellow :hover .databox-number ,.success :hover .databox-number,.orange :hover .databox-number {
+	color: #FFFFFF !important;
+}

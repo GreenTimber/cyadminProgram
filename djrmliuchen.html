@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+    <title>创游云ERP</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/search.css" rel="stylesheet" />
+    <link href="css/djliuchen.css" rel="stylesheet" />
+<style>
+    .st-1img img{
+        width: 60%;
+        height: 80%;
+        margin-top: 30px;
+        margin-left: 70px;
+    }
+</style>
+</head>
+<body ontouchstart="">
+<div id="cyreload">
+    <div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div> <div class="imglogodiv"><img class="imglogo" src="images/logo.png"/></div>
+</div>
+
+<div class="widget">
+    <div class="widget-header bordered-bottom bordered-blue" id="fiexdtitle">
+        <span class="widget-caption">刃磨流程</span>
+
+        <div class="form-group-l   detailbtns" >
+            <a class="refresh btn btn-sky btn-sm okbtn" id="refresh-toggler" href="" title="刷新此页面"> <i
+                    class="glyphicon glyphicon-refresh"></i>刷新
+            </a>
+        </div>
+    </div>
+
+    <div class="widget-body no-padding" >
+        <div class="widget-main " >
+            <div class="panel-group accordion" id="accordion" >
+
+
+                    <div class="panel-heading ">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle  " data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+                                刃磨流程
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="height: auto;">
+                        <div class="panel-body border-red">
+                            <div class="guidcontainer col-lg-12 col-sm-12 col-xs-12 col-md-12">
+                                <div class="btncontent">
+                                    <button type="button" class="btn btn-default col-sm-12 col-xs-12 col-md-12" id="btn1">第一步</button>
+                                    <div class="bottomarrdiv col-sm-12 col-xs-12 col-md-12"><img src="images/lc/bottom.png" class="bottomarr"></div>
+                                    <button type="button" class="btn btn-default col-sm-12 col-xs-12 col-md-12" id="btn2">第二步</button>
+                                    <div class="bottomarrdiv col-sm-12 col-xs-12 col-md-12"><img src="images/lc/bottom.png" class="bottomarr"></div>
+                                    <button type="button" class="btn btn-default col-sm-12 col-xs-12 col-md-12" id="btn3">第三步</button>
+                                    <div class="bottomarrdiv col-sm-12 col-xs-12 col-md-12"><img src="images/lc/bottom.png" class="bottomarr"></div>
+                                    <button type="button" class="btn btn-default col-sm-12 col-xs-12 col-md-12" id="btn4">第四步</button>
+                                </div>
+                                <div class="lctitle">
+                                <img src="images/lc/lu5t.png">
+                                </div>
+                                <div class="lccontent1" style="display: none;">
+                                    <div class="st-1img">
+                                        <img src="images/lc/lc5-1.png" class="lc1-1" style="display:none;" />
+                                    </div>
+                                    <div class="rightarr">
+                                        <img src="images/lc/right.png" class="right1" style="display:none;"/>
+                                    </div>
+                                    <div class="st-1span">
+                                        <div class="divspan1 col-sm-12 col-xs-12 col-md-12" style="display:none;">
+                                            <p>第一步要领：</p>
+                                            <p>1、人工目视初步判定刀具是否符合刃磨标准。</p>
+                                            <p>2、ZOLLER对刀仪检测刀具相关参数，判定是否符合刃磨要求。</p>
+                                            <p>3、将判定刃磨的刀具按拆刀流程分解，按不同类别管理。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lccontent2" style="display: none;">
+                                    <div class="st-1img">
+                                        <img src="images/lc/lc5-2.png" class="lc1-2" style="display:none;" />
+                                    </div>
+                                    <div class="rightarr">
+                                        <img src="images/lc/right.png" class="right2" style="display:none;"/>
+                                    </div>
+                                    <div class="st-1span">
+                                        <div class="divspan2 col-sm-12 col-xs-12 col-md-12" style="display:none;">
+                                            <p>第二步要领：</p>
+                                            <p>1、系统生成刃磨清单。</p>
+                                            <p>2、系统保存并发送清单至上一级待审批。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lccontent3" style="display: none;">
+                                    <div class="st-1img">
+                                        <img src="images/lc/lc5-3.png" class="lc1-3" style="display:none;" />
+                                    </div>
+                                    <div class="rightarr">
+                                        <img src="images/lc/right.png" class="right3" style="display:none;"/>
+                                    </div>
+                                    <div class="st-1span">
+                                        <div class="divspan3 col-sm-12 col-xs-12 col-md-12" style="display:none;">
+                                            <p>第三步要领：</p>
+                                            <p>1、主管审批系统发送的刀具刃磨清单。</p>
+                                            <p>2、审批通过后系统反馈下一级处理。</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lccontent4" style="display: none;">
+                                    <div class="st-1img">
+                                        <img src="images/lc/lc5-4.png" class="lc1-4" style="display:none;" />
+                                    </div>
+                                    <div class="rightarr">
+                                        <img src="images/lc/right.png" class="right4" style="display:none;"/>
+                                    </div>
+                                    <div class="st-1span">
+                                        <div class="divspan4 col-sm-12 col-xs-12 col-md-12" style="display:none;">
+                                            <p>第四步要领：</p>
+                                            <p>1、审批后的实物明细在指定位置存放待下一步处理。</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script src="assets/js/jquery.min.js"></script>
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+
+
+
+
+<script src="assets/js/bootbox/bootbox.js"></script>
+
+
+
+    <script>
+        (function ($) {
+            // setInterval(function(){
+            //     $("#cyreload").fadeOut();
+            // }, 1000);
+            $("#cyreload").show();
+        })(jQuery);
+        $(document).ready(function(){
+            $("#cyreload").fadeOut();
+        });
+        $(document).ready(function(){
+            $("#btn1").click();
+        })
+    $("#btn1").click(function () {
+        $(".lccontent1").css("display","block");
+        $(".lccontent2").css("display","none");
+        $(".lccontent3").css("display","none");
+        $(".lccontent4").css("display","none");
+
+        $(".lc1-1").css("display","block");
+        $(".lc1-1").removeClass("animated fadeInLeft");
+        $(".lc1-1").addClass("animated fadeInLeft");
+        $(".right1").css("display","none");
+        setTimeout('$(".right1").css("display","block");',1000);
+        $(".right1").removeClass("animated fadeInLeft");
+        $(".right1").addClass("animated fadeInLeft");
+        $(".divspan1").css("display","none");
+        setTimeout('$(".divspan1").css("display","block");',2000);
+        $(".divspan1").removeClass("animated fadeInLeft");
+        $(".divspan1").addClass("animated fadeInLeft");
+
+    });
+    $("#btn2").click(function () {
+        $(".lccontent1").css("display","none");
+        $(".lccontent2").css("display","block");
+        $(".lccontent3").css("display","none");
+        $(".lccontent4").css("display","none");
+
+
+        $(".lc1-2").css("display","block");
+        $(".lc1-2").removeClass("animated fadeInLeft");
+        $(".lc1-2").addClass("animated fadeInLeft");
+        $(".right2").css("display","none");
+        setTimeout('$(".right2").css("display","block");',1000);
+        $(".right2").removeClass("animated fadeInLeft");
+        $(".right2").addClass("animated fadeInLeft");
+        $(".divspan2").css("display","none");
+        setTimeout('$(".divspan2").css("display","block");',2000);
+        $(".divspan2").removeClass("animated fadeInLeft");
+        $(".divspan2").addClass("animated fadeInLeft");
+
+    });
+    $("#btn3").click(function () {
+        $(".lccontent1").css("display","none");
+        $(".lccontent2").css("display","none");
+        $(".lccontent3").css("display","block");
+        $(".lccontent4").css("display","none");
+
+
+
+
+
+        $(".lc1-3").css("display","block");
+        $(".lc1-3").removeClass("animated fadeInLeft");
+        $(".lc1-3").addClass("animated fadeInLeft");
+        $(".right3").css("display","none");
+        setTimeout('$(".right3").css("display","block");',1000);
+        $(".right3").removeClass("animated fadeInLeft");
+        $(".right3").addClass("animated fadeInLeft");
+        $(".divspan3").css("display","none");
+        setTimeout('$(".divspan3").css("display","block");',2000);
+        $(".divspan3").removeClass("animated fadeInLeft");
+        $(".divspan3").addClass("animated fadeInLeft");
+
+    });
+    $("#btn4").click(function () {
+        $(".lccontent1").css("display","none");
+        $(".lccontent2").css("display","none");
+        $(".lccontent3").css("display","none");
+        $(".lccontent4").css("display","block");
+
+
+
+
+        $(".lc1-4").css("display","block");
+        $(".lc1-4").removeClass("animated fadeInLeft");
+        $(".lc1-4").addClass("animated fadeInLeft");
+        $(".right4").css("display","none");
+        setTimeout('$(".right4").css("display","block");',1000);
+        $(".right4").removeClass("animated fadeInLeft");
+        $(".right4").addClass("animated fadeInLeft");
+        $(".divspan4").css("display","none");
+        setTimeout('$(".divspan4").css("display","block");',2000);
+        $(".divspan4").removeClass("animated fadeInLeft");
+        $(".divspan4").addClass("animated fadeInLeft");
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/djliuchen.css" type="text/css" />
+</head>
+<body>
+<div class="guidcontainer">
+    <div class="btncontent">
+    <button type="button" class="btn btn-default" id="btn1">流程汇总</button>
+    <button type="button" class="btn btn-default" id="btn2">流程一</button>
+    <button type="button" class="btn btn-default" id="btn3">流程二</button>
+    <button type="button" class="btn btn-default" id="btn4">流程三</button>
+    <button type="button" class="btn btn-default" id="btn5">流程四</button>
+    <button type="button" class="btn btn-default" id="btn6">流程五</button>
+    <button type="button" class="btn btn-default" id="btn7">流程六</button>
+    </div>
+    <div class="lccontent">
+        <div class="lc1-pic">
+            <div class="lc-one">
+                <img src="images/lc/lc1-1.png" class="lc1-1" style="display: none;">
+            </div>
+            <img src="images/lc/right.png" class="right1" style="display: none;">
+            <div class="lc-one">
+            <img src="images/lc/lc1-2.png" class="lc1-2" style="display: none;">
+            </div>
+            <img src="images/lc/right.png" class="right2" style="display: none;">
+            <div class="lc-one">
+            <img src="images/lc/lc1-3.png" class="lc1-3" style="display: none;">
+            </div>
+            <img src="images/lc/right.png" class="right3" style="display: none;">
+            <div class="lc-one">
+            <img src="images/lc/lc1-4.png" class="lc1-4" style="display: none;">
+            </div>
+        </div>
+        <div class="lc1-span">
+            <div class="spancontent spanc1" style="float: left;display: none;">
+            <span><p>第一步要领：</p>
+                <p>1、检测RFID刀柄、拉丁、筒夹有无碰伤等缺陷。</p>
+                <p>2、清理干净刀柄、拉钉、筒夹、刀柄内部铝屑等赃污。</p>
+                <p>3、确认刀具是否为需要组装的规格。</p>
+            </span>
+            </div>
+            <div class="spancontent spanc2" style="float: right;display: none;">
+            <span><p>第二步要领：</p>
+                <p>1、依次装好拉丁、筒夹、刀具，并手指适当拧紧。</p>
+                <p>2、注意动作要轻拿轻放，避免刀具和刀柄碰伤。</p>
+            </span>
+            </div>
+            <div class="spancontent spanc3" style="float: left;display: none;">
+            <span><p>第三步要领：</p>
+                <p>1、将初步组装好的刀柄轻放进锁刀架上。</p>
+                <p>2、用专用拧紧扳手顺时针方向锁紧刀具。</p>
+                <p>3、锁紧时要用力适度、注意不要碰伤刀具。</p>
+                <p>4、同时锁紧拉钉。</p>
+            </span>
+            </div>
+            <div class="spancontent spanc4" style="float: right;display: none;">
+            <span><p>第四步要领：</p>
+                <p>1、检查组装OK的刀具是否准确无误。</p>
+                <p>2、确认OK后将刀具放在指定的刀车待测量。</p>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $("#btn2").on("click",function () {
+        $(".lc1-1").css("display","block");
+        $(".lc1-1").addClass("animated fadeInLeft");
+        $(".spanc1").css("display","block");
+        $(".spanc1").addClass("animated zoomIn");
+        showGuid();
+    });
+
+    function showGuid() {
+        setTimeout('$(".right1").css("display","block");',1000);
+        $(".right1").addClass("animated fadeInLeft");
+        setTimeout('$(".lc1-2").css("display","block");',2000);
+        $(".lc1-2").addClass("animated fadeInLeft");
+        setTimeout('$(".spanc2").css("display","block");',2000);
+        $(".spanc2").addClass("animated zoomIn");
+        setTimeout('$(".right2").css("display","block")',3000);
+        $(".right2").addClass("animated fadeInLeft");
+        setTimeout('$(".lc1-3").css("display","block");',4000);
+        $(".lc1-3").addClass("animated fadeInLeft");
+        setTimeout('$(".spanc3").css("display","block");',4000);
+        $(".spanc3").addClass("animated zoomIn");
+        setTimeout('$(".right3").css("display","block")',5000);
+        $(".right3").addClass("animated fadeInLeft");
+        setTimeout('$(".lc1-4").css("display","block");',6000);
+        $(".lc1-4").addClass("animated fadeInLeft");
+        setTimeout('$(".spanc4").css("display","block");',6000);
+        $(".spanc4").addClass("animated zoomIn");
+    }
+
+
+</script>
+</body>
+</html>

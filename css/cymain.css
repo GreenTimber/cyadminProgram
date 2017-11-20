@@ -1,0 +1,667 @@
+/*整体字体*/
+*{font-family:Microsoft YaHei,sans-serif;font-size: 13px;}
+html{
+    overflow: hidden;
+    height: 100%;
+    margin:0;
+}
+
+/*收缩框*/
+.page-sidebar .sidebar-header-wrapper .searchinput{
+    background-color: #293038;
+    border: 1px solid #293038;
+}
+.page-sidebar .sidebar-header-wrapper .searchinput:focus{
+    background-color: #fff;
+}
+/*去除before*/
+.page-sidebar:before{
+    display: none;!important;
+}
+@media (max-width: 880px)
+     {
+    .page-sidebar.hide:before{ display: none !important;}
+    }
+/*菜单间隔线颜色*/
+.page-sidebar .sidebar-menu>li>a {
+    border-top: 0px solid #293038;
+}
+/*菜单上字体颜色*/
+.page-sidebar .sidebar-menu a {color:#fff}
+/*鼠标移到菜单上菜单颜色*/
+.page-sidebar .sidebar-menu>li>a:hover{background-color: #0099cc;}
+/*鼠标移动菜单上icon颜色*/
+.page-sidebar .sidebar-menu li :hover :before {color:#fff;}
+/*鼠标移动菜单上字的颜色*/
+.page-sidebar .sidebar-menu a:hover{color:#fff;}
+/*最上面title栏颜色*/
+.navbar .navbar-inner{background:#0099cc;}
+/*有三级子菜单下边线的颜色*/
+.page-sidebar .sidebar-menu>li:last-child>a {
+    border-bottom: 1px solid #293038;
+}
+/*菜单缩小后icon颜色*/
+.menu-compact .sidebar-menu>li:hover>a>i:before{color:#0099cc; }
+.menu-compact{
+    z-index: 2;
+}
+
+.page-sidebar.menu-compact{
+    width: 0px;
+}
+/*三级菜单左边竖条颜色*/
+.page-sidebar .sidebar-menu li:before{
+     background-color: #2E6A79;
+ }
+
+/*打开二级菜单后一级菜单的背景颜色*/
+.page-sidebar .sidebar-menu>li.open>a {
+    background-color: #293038;color:#fff;
+}
+/*li最左边竖条*/
+.page-sidebar .sidebar-menu li:not(.open):hover:before {
+    display: block;
+    background-color: #0a819c;
+}
+
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+/*设置滚动菜单*/
+#sidebar{
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 45px;
+    background-color: #293039;
+    z-index: 101;
+}
+.page-sidebar .sidebar-menu li.open{
+    background-color: #29303a;
+}
+.page-sidebar .sidebar-menu{
+    margin-left: 0px;
+}
+/*  点击菜单后的颜色 */
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #293038;
+}
+
+
+.page-sidebar.menu-compact~.page-content{
+    margin-left: 0px;
+}
+/*导航栏宽度 */
+.page-sidebar.menu-compact:before {
+     width: 0px;
+ }
+/*子菜单字体颜色*/
+.submenu li a span{
+    color: #293038;
+}
+/*鼠标移动到子菜单上变色*/
+.submenu li a:hover{
+    background-color: #0099cc;
+}
+
+/*tab按钮内容*/
+.widget-buttons{
+    height: 0px;
+    line-height: 0px;
+}
+.nav-tabs li a:hover{
+    background-color: #0099cc;
+}
+/*获得焦点的tab样式*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+    line-height: 20px;
+    margin-top: 0px;
+    z-index: 1;
+    background-color: #fff;
+}
+/*tab内li*/
+.nav-tabs>li{
+    margin-left: 0px;
+    margin-bottom: 0px;
+
+}
+.nav-tabs>li:first-child>a{
+    margin-left: 1px;
+    border-left: 0px solid #fbfbfb;
+}
+.nav-tabs{
+    height: 40px;
+    overflow-x:hidden;overflow-y: hidden;white-space: nowrap;display: flex;margin-right: 30px;margin-left: 30px;
+}
+.nav-tabs>li>a, .nav-tabs>li>a:focus{
+    line-height: 20px;
+    z-index: 0;
+}
+/*tab内容*/
+.tab-content{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    height: auto;
+}
+.tab-content iframe{
+    border: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+.tab-pane{
+    width: 100%;
+    height:100%;
+}
+/*底部状态栏*/
+.pagefoot{
+     position: fixed;
+     width: 100%;
+     height: 30px;
+    bottom: 0px;
+     background-color: #fff;
+     box-shadow: 0px -2px 15px 2px #b7b7b7;
+ }
+.cytabclose:hover{
+    cursor: pointer;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+/*cymobile-block-menu*/
+.cymobile-block-menu{
+    width: 50px;height: 50px;
+    z-index: -999999;
+    opacity: 0.8;
+    background-color: #5b6c7c;
+    bottom: 15px;
+    left: 15px;
+    position: fixed;
+    text-align: center;
+
+}
+/*头像下拉顶部白条*/
+.navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-menu{
+    min-width: 100%;
+}
+/*头像下拉顶部白条*/
+.navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-arrow:before {
+   width:  100%
+}
+/*通知下拉顶部白条*/
+.navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-messages:before {
+    width:  50px;
+}
+
+/*头部菜单*/
+.headertitle a{
+    margin-top: 2px;
+    background-color: #0099cc !important;
+
+}
+/*手机端顶部菜单左右滑动*/
+.page-header{
+    height: 34px;
+    width: 100%;
+    padding-left: 1px;
+}
+
+/*手机端顶部菜单左右滑动*/
+.headertitle{
+    float: left;
+    width: 100%;
+    height: 34px;
+    display: inline;
+    white-space:nowrap;
+    margin-top: 1px;
+    margin-left: 5px;
+}
+
+
+
+/*右上角头像下拉宽度*/
+.pull-right .dropdown-menu .dropdown-arrow .dropdown-login-area{
+    width: 100%;
+}
+
+.btn-palegreen, .btn-palegreen:focus{
+    background-color: #11a9cc !important;
+    border-color: #11a9cc;
+    color: #fff;
+}
+.btn-palegreen, .btn-palegreen:hover{
+    background-color: #0099cc !important;
+    border-color: #0099cc;
+    color: #fff;
+}
+.tabbarright{
+    float: right;
+    width: 30px;
+    height: 40px;
+    /*z-index: 10;*/
+    background-color: #eeeeee;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+    text-align: center;
+    top:0;
+    right: 0;
+    position: absolute;
+}
+.tabbarright i,.tabbarleft i{
+    font-size: 27px;
+    height: 20px;
+    margin-top: 5px;
+}
+.tabbarright:hover,.tabbarleft:hover{
+    background-color: #fff;
+}
+.tabbarleft{
+    float: left;
+    width: 30px;
+    height: 40px;
+    /*z-index: 10;*/
+    background-color: #eeeeee;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+    text-align: center;
+    top:0;
+    left: 0;
+    position: absolute;
+}
+.page-sidebar.menu-compact .sidebar-header-wrapper{
+    width:0px;
+}
+.page-sidebar.menu-compact .sidebar-menu{
+    width:0px;
+}
+
+.page-sidebar.menu-compact.hide~.page-content{
+    margin-left: 0px !important;
+}
+/*预加载样式*/
+#cyreload{position: fixed;width: 100%;height: 100%;top:0px;left: 0px;background-color: #eee;z-index: 9999999;opacity:1;}
+.spinner3 {
+    right: 50%;left: 50%;
+    top:50%;bottom: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-animation: rotate 2.0s infinite linear;
+    animation: rotate 2.0s infinite linear;
+
+}
+.imglogodiv{
+    width: 100%;
+    height: 50px;
+    top:40%;bottom: 60%;
+    position: absolute;
+    text-align: center;
+}
+.imglogo{
+    width: 178px;
+    height: 50px;
+}
+.dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #0099cc;
+    border-radius: 100%;
+
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg);}}
+@keyframes rotate {
+    100% { transform: rotate(360deg); -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+/*预加载样式结束*/
+
+
+/*菜单红点*/
+.unread{
+    float: right;
+    background: #e74c3c;
+    width: 1em;
+    border-radius: 50%;
+    font-size: 0.75em;
+    line-height: 1;
+    text-align: center;
+    animation: notificationpulse 2s infinite;
+    -webkit-animation: notificationpulse 2s infinite;
+    -moz-animation: notificationpulse 2s infinite;
+    margin-top: 1rem;
+}
+/*the animations */
+@keyframes notificationpulse {
+    0% {
+        box-shadow: 0 0 0 0.00em #e74c3c;
+    }
+    25% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+    50% {
+        box-shadow: 0 0 0 0.30em #e74c3c;
+    }
+    75% {
+        box-shadow: 0 0 0 0.20em #e74c3c;
+    }
+    100% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+}
+@-webkit-keyframes notificationpulse {
+    0% {
+        box-shadow: 0 0 0 0.00em #e74c3c;
+    }
+    25% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+    50% {
+        box-shadow: 0 0 0 0.30em #e74c3c;
+    }
+    75% {
+        box-shadow: 0 0 0 0.20em #e74c3c;
+    }
+    100% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+}
+
+@-moz-keyframes notificationpulse {
+    0% {
+        box-shadow: 0 0 0 0.00em #e74c3c;
+    }
+    25% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+    50% {
+        box-shadow: 0 0 0 0.30em #e74c3c;
+    }
+    75% {
+        box-shadow: 0 0 0 0.20em #e74c3c;
+    }
+    100% {
+        box-shadow: 0 0 0 0.15em #e74c3c;
+    }
+}
+/*菜单红点结束*/
+
+/*右上角消息*/
+.dropdown-toggle i{
+    font-size: 20px;
+    margin-top: 13px;
+    margin-left: 13px;
+    color: white;
+}
+.bellunread{
+    right: 10px;
+    position: absolute;
+    font-size: 3px;
+}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages{
+    padding-top: 0px;!important;
+}
+.dropdown-messages{
+    height: 342px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+/*手机样式*/
+@media screen and (max-width: 750px)  {
+    html,body{
+        overflow: hidden;
+        height: 100%;
+    }
+    .main-container{
+        height: 80%;
+    }
+    .page-container{
+        height: 100%;
+    }
+    .page-content{
+        height: 100%;
+    }
+
+    .tabbable{
+        height: 100%;
+    }
+    /*tab内容*/
+    .tab-content{
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        width: 100%;height: 100%;
+    }
+    /*让ios的iframe 可以滚动*/
+    .tab-pane{
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+    }
+    /*遮罩*/
+    #shade{
+        width:100%;
+        height:100%;
+        background-color:#000;
+        position:absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        z-index:100;
+        opacity:0.3;
+        /*兼容IE8及以下版本浏览器*/
+        filter: alpha(opacity=30);
+        display:none;
+    }
+
+    .navbar .navbar-inner .navbar-header .navbar-account .account-area {
+        right: 0px;
+        top:0px;
+    }
+    .navbar .navbar-inner .navbar-header {
+        height: 0px;
+    }
+    .navbar{
+        height: 0px;
+    }
+
+
+    .navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-menu{width: 145px;}
+    /*通知下拉顶部白条*/
+    .navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-arrow:before {
+        display: none;
+    }
+    .navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages{
+        right: 0px;
+        width: 210px;
+    }
+    .navbar .navbar-inner .navbar-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message{
+        width: 90%;
+    }
+
+
+
+    .page-sidebar.hide~.page-content{
+        margin-left: 0px !important;
+    }
+    .sidebar-collapse{
+        display: none;!important;
+    }
+    /*cymobile-block-menu*/
+    .cymobile-block-menu{
+        width: 50px;height: 50px;
+        z-index: 100000;
+        opacity: 0.8;
+        background-color: #5b6c7c;
+        bottom: 15px;
+        left: 15px;
+        position: fixed;
+        text-align: center;
+
+    }
+    .cymobile-block-menu i{
+        font-size: 30px;
+        margin-top: 10px;
+        color: #e4f0fc;
+    }
+    .nav-tabs,.tabbarleft,.tabbarright{
+        display: none;!important;
+    }
+
+
+    /*菜单进入动画*/
+    .page-sidebar.hide{
+        animation: showmenu 0.3s;
+        -moz-animation: showmenu 0.3s;	/* Firefox */
+        -webkit-animation: showmenu 0.3s;	/* Safari 和 Chrome */
+        -o-animation: showmenu 0.3s;
+    }
+    .page-sidebar:before{
+        animation: showmenu 0.3s;
+        -moz-animation: showmenu 0.3s;	/* Firefox */
+        -webkit-animation: showmenu 0.3s;	/* Safari 和 Chrome */
+        -o-animation: showmenu 0.3s;
+    }
+
+
+}
+/*ipad尺寸*/
+@media screen and (max-width: 40.0625em){
+    html,body{
+        overflow: hidden;
+        height: 100%;
+    }
+    /*手机端顶部菜单左右滑动*/
+    .headertitle{
+        float: left;
+        width: 100%;
+        height: 34px;
+        overflow-x:scroll;
+        display: inline;
+        white-space:nowrap;
+        margin-top: 1px;
+        margin-left: 5px;
+    }
+    .main-container{
+        height: 90%;
+    }
+    .page-container{
+        height: 100%;
+    }
+    .page-content{
+        height: 100%;
+    }
+    /*让ios的iframe 可以滚动*/
+    .tab-pane{
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+    }
+    .tabbable{
+        height: 100%;
+    }
+    /*tab内容*/
+    .tab-content{
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        width: 100%;height: 100%;
+    }
+}
+@-webkit-keyframes showmenu {
+    from {left: -50%;}
+    to {left: 0%;}
+}
+@keyframes showmenu{
+    from {left: -50%;}
+    to {left: 0%;}
+}
+@-moz-keyframes showmenu{
+    from {left: -50%;}
+    to {left: 0%;}
+}
+@-o-keyframes showmenu{
+    from {left: -50%;}
+    to {left: 0%;}
+}
+
+/*引导内容*/
+.guide-content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99999997;
+    background-color: rgba(105,105,105,0.6);
+}
+
+.iframe-content{
+    width: 1007px;
+    height: 487px;
+    z-index: 99999998;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -250px;
+    margin-left: -500px;
+}
+.ifguidclose{
+    display: none;
+}
+.ifguidshow{
+    display: block;
+}
+.closeguidbtn{
+    right: 0;float: right;z-index: 99999;
+    margin-top: 10px;margin-right: 10px;
+    background-color: #eee;;
+}
+.closeguidbtn:hover{
+    background-color: #fdfdfd;
+}
+.fa-close{
+    font-size: 35px!important;
+    animation: xzbtn 1s;
+    animation-direction:alternate;
+    animation-iteration-count:infinite;
+}
+@keyframes xzbtn
+{
+    from {transform:none;}
+    to {transform:rotate(180deg);}
+}

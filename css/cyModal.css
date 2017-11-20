@@ -1,0 +1,40 @@
+.modal-open{
+    padding-right: 0px;
+}
+.modal-header{
+    height: 30px;
+    padding: 2px;
+    border-bottom: 3px solid #3299cb;
+}
+.modal-header .close:hover{
+
+    background-color: #FFFFFF;
+}
+.modal-header h6{
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.modal-lg{
+    height: auto;
+    width: 90%;
+}
+.modal-sm{
+    width: 50%;
+    height: auto;
+}
+.modal-body{
+    padding: 5px;
+    background-color: #fbfbfb;
+}
+
+@media screen and (max-width: 750px) {
+    .modal-lg{
+        height: auto;
+        width: auto;
+    }
+    .modal-sm{
+        width: 60%;
+        height: auto;
+    }
+}

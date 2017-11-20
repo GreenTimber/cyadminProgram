@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="plus/css/daterangepicker-bs3.css" rel="stylesheet" />
+
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/dataTables.foundation.min.css" rel="stylesheet" />
+    <link href="css/responsive.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedHeader.foundation.min.css" rel="stylesheet" />
+    <link href="css/scroller.foundation.min.css" rel="stylesheet" />
+    <link href="css/colReorder.foundation.min.css" rel="stylesheet" />
+    <link href="css/fixedColumns.foundation.min.css" rel="stylesheet" />
+    <script src="assets/js/skins.min.js"></script>
+    <link href="css/test2css.css" rel="stylesheet" />
+    <title>创游云ERP</title>
+</head>
+<body>
+    <div class="widget flat">
+        <div class="widget-header bordered-bottom bordered-platinum">
+            <span class="widget-caption">采购订单</span>
+            <div class="widget-buttons">
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a href="#" data-toggle="collapse">
+                    <i class="fa red fa-minus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="table-toolbar">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="widget flat">
+                        <div class="widget-header">
+                            <span class="widget-caption">筛选条件</span>
+                            <div class="widget-buttons">
+                                <a href="#" data-toggle="collapse">
+                                    <i class="fa red fa-minus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body filtpane">
+                                <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="redstar">*<span>客户姓名：</span></label>
+                                            <input type="email" class="form-control"  placeholder="请输入条件"/>
+                                        </div>
+                                    <div class="form-group">
+                                        <label><span>客户地址：</span></label>
+                                        <input type="email" class="form-control"  placeholder="请输入条件"/>
+                                    </div>
+                                        <div class="input-group ">
+                                            <span class="input-group-addon">
+                                                    选择供应商
+                                            </span>
+                                            <input type="text" class="form-control"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default sltbtn" type="button" >选择</button>
+                                            </span>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                    选择日期
+                                            </span>
+                                                <input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy"/>
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                    选择时间范围
+                                            </span>
+                                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                                    <input type="text" name="reservation" id="reservationtime" class="form-control" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM"  class="span4"/>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                    选择时间
+                                            </span>
+                                            <input class="form-control" id="timepicker1" type="text"/>
+                                            <span class="input-group-addon">
+                                                    <i class="fa fa-clock-o"></i>
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span>选择类型：</span></label>
+                                            <select class="selectsearch ">
+                                                <option value="1">采购</option>
+                                                <option value="2">销售</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group  searchbtn">
+                                            <a href="javascript:void(0);" class="btn btn-default">搜索</a>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-scrollable">
+                <div class="colyc">
+                    <button class="addbtn btn-sm"><i class="fa fa-plus"></i><span>新增</span></button>
+                    <button class="showcol btn-sm"><i class="fa fa-list-ol"></i><span>列段显示/隐藏</span></button>
+                    <button class="colReordercol btn-sm"><i class="fa fa-undo"></i><span>还原拖动</span></button>
+                    <button class="pldelect btn-sm"><i class="fa fa-trash"></i><span>批量删除</span></button>
+                    <button class="portbtn btn-sm"><i class="fa fa-download"></i><span>导入</span></button>
+                    <button class="exportbtn btn-sm"><i class="fa fa-upload"></i><span>导出</span></button>
+
+                    <!--隐藏列-->
+                    <ul class="showul">
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="0"/><span class="text">选择</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="1"/><span class="text">客户编号</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="2"/><span class="text">用户名称</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="3"/><span class="text">客户类型</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="4"/><span class="text">客户阶段</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="5"/><span class="text">客户来源</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="6"/><span class="text">手机</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="7"/><span class="text">邮箱</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="8"/><span class="text">新增时间</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="9"/><span class="text">备注</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="10"/><span class="text">创建时间</span></label></div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><label> <input type="checkbox" class="toggle-vis" data-column="11"/><span class="text">操作</span></label></div>
+                        </li>
+                    </ul>
+                </div>
+            <table id="cyadmintable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="th0">>
+                    </th>
+                    <th class="th1">客户编号</th>
+                    <th class="th2">用户名称</th>
+                    <th class="th3">客户类型</th>
+                    <th class="th4">客户阶段</th>
+                    <th class="th5">客户来源</th>
+                    <th class="th6">手机</th>
+                    <th class="th7">邮箱</th>
+                    <th class="th8">新增时间</th>
+                    <th class="th9">备注</th>
+                    <th class="th10">创建时间</th>
+                    <th class="th11">操作</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>合计</th>
+                    <th></th>
+                    <th></th>
+                    <th>$108.00</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+    </div>
+
+
+<!--//双击tr界面-->
+<div class="modal fade " id="dbpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h6 class="modal-title" >详细信息</h6>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div >
+                            <form role="form">
+
+                                <div class="table-scrollable">
+                                    <table class="table table-bordered table-striped nowrap table-hover" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th><h5 class="no-margin-bottom">审批条件</h5></th>
+                                            <th><h5 class="no-margin-bottom">审批资格</h5></th>
+                                            <th><h5 class="no-margin-bottom text-center">申请人</h5></th>
+                                            <th><h5 class="no-margin-bottom text-center">申请金额</h5></th>
+                                            <th><h5 class="no-margin-bottom text-center">申请时间</h5></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>检验过五</td>
+                                            <td>上级领导</td>
+                                            <td class="text-center">张三</td>
+                                            <td class="text-center">$200.00</td>
+                                            <td class="text-center">2017-09-28</td>
+                                        </tr>
+                                        <tr>
+                                            <td>检验过五</td>
+                                            <td>上级领导</td>
+                                            <td class="text-center">李四</td>
+                                            <td class="text-center">$200.00</td>
+                                            <td class="text-center">2017-09-28</td>
+                                        </tr>
+                                        <tr>
+                                            <td>检验过五</td>
+                                            <td>上级领导</td>
+                                            <td class="text-center">王五</td>
+                                            <td class="text-center">$200.00</td>
+                                            <td class="text-center">2017-09-28</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                    <label>审核意见：</label>
+                                    <textarea></textarea>
+
+                                        <div class="form-group-l  col-lg-3 col-md-3 col-sm-3 detailbtns">
+                                            <button type="button"   class="btn btn-default refusebtn" >
+                                                <i class="fa fa-ban"></i> 拒绝通过
+                                            </button>
+                                            <button type="button"   class="btn btn-default okbtn" >
+                                                <i class="fa fa-check"></i> 审批通过
+                                            </button>
+                                        </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--选择弹框-->
+    <div class="modal fade " id="sltpane" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h6 class="modal-title" >编辑</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="table-scrollable">
+
+                                        <table id="selecttable" class="table display  nowrap table-hover" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                </th>
+                                                <th class="th0">订单编号</th>
+                                                <th class="th1">订单名称</th>
+                                                <th class="th2">订单类型</th>
+                                                <th class="th3">订单阶段</th>
+                                                <th class="th4">订单来源</th>
+                                                <th class="th5">订单状态</th>
+                                                <th class="th9">创建时间</th>
+                                                <th class="th9">创建时间</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+
+                    </div>
+                                <div class="row">
+                                    <div class="form-group-l  col-lg-3 col-md-3 col-sm-3 detailbtns">
+                                        <button type="button"   class="btn btn-default okbtn" >
+                                            <i class="fa fa-check"></i>确定
+                                        </button>
+                                    </div> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/js/beyond.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.foundation.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<script src="js/responsive.foundation.min.js"></script>
+<script src="js/dataTables.fixedHeader.min.js"></script>
+<script src="js/dataTables.scroller.min.js"></script>
+<script src="js/dataTables.fixedColumns.min.js"></script>
+<script src="js/dataTables.colReorder.min.js"></script>
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+<script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+
+<script src="js/test2js.js"></script>
+<script>
+    $('.date-picker').datepicker();
+    $('#timepicker1').timepicker();
+    $('#reservationtime').daterangepicker();
+    CyadminDatadable().init();
+</script>
+</body>
+</html>

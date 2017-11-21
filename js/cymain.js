@@ -66,6 +66,7 @@ function addtab(menuid,tabname,taburl){
 // 关闭tab
 function closetab(id){
     $("#myTab").find("li").each(function () {
+
             if($(".cytab"+id+"").index()==$(this).index()&&$(this).hasClass("active")==true){
                      if($(this).index()+1==$("#myTab").find("li").length){
                          $(this).prev("li").addClass("active");
@@ -79,6 +80,7 @@ function closetab(id){
                          $(".cytab"+id+"").remove();
                      }
                 }
+
             if($(".cytab"+id+"").index()==$(this).index()&&$(this).hasClass("active")==false){
                 $($(".cytab"+id+"").children().attr("href")).remove();
                 $(".cytab"+id+"").remove();

@@ -47,12 +47,7 @@
     width: 0;
     height: 20px;
 }
-p{
-
-    top:98px;
-    left: 650px;
-}
-#text{
+#cyprotest{
     height: 25px;
     -moz-appearance: textfield-multiline;
     -webkit-appearance: textarea;
@@ -61,6 +56,15 @@ p{
     overflow: auto;
     padding: 2px;
     resize: both;
+    width: 80px;
+    position: absolute;
+    top:98px;
+    left: 650px;
+}
+#protest{
+    height: 25px;
+    overflow: auto;
+    padding: 2px;
     width: 100px;
     position: absolute;
     top:98px;

@@ -17,7 +17,7 @@ bar.onmousedown = function(event){
             barleft = scroll.offsetWidth - bar.offsetWidth;
         mask.style.width = barleft +'px' ;
         that.style.left = barleft + "px";
-        ptxt.innerHTML = "<div id='text'>" + parseInt(barleft/(scroll.offsetWidth-bar.offsetWidth) * 200) + "&nbsp;Mbps"+"</div>";
+        ptxt.innerHTML = "<div id='protest'>" + parseInt(barleft/(scroll.offsetWidth-bar.offsetWidth) * 200) + "&nbsp;Mbps"+"</div>";
 
         //防止选择内容--当拖动鼠标过快时候，弹起鼠标，bar也会移动，修复bug
         window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();

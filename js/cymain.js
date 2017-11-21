@@ -86,6 +86,7 @@ function closetab(id){
                 $(".cytab"+id+"").remove();
                 }
         });
+
 }
 //手机端显示菜单
 $('.cymobile-block-menu').click(function () {
